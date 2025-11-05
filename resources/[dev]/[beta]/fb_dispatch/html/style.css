@@ -1,0 +1,1300 @@
+@import"https://fonts.googleapis.com/css?family=Poppins:200,400,500,600,700";
+@import"https://fonts.googleapis.com/css2?family=Open+Sans&display=swap";
+
+body {
+    overflow: hidden;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace
+}
+
+:root {
+    --black: rgba(0, 0, 0, 1);
+    --black-40: rgba(0, 0, 0, .4);
+    --black2-20: rgba(2, 2, 2, .2);
+    --black2-40: rgba(2, 2, 2, .4);
+    --black2-50: rgba(2, 2, 2, .5);
+    --black2-60: rgba(2, 2, 2, .6);
+    --black2-80: rgba(2, 2, 2, .8);
+    --black14-85: rgba(14, 14, 14, .85);
+    --noir-85: rgba(20, 20, 20, .851);
+    --grey: rgb(127, 127, 127);
+    --global-main-color: rgba(83, 18, 127, 1);
+    --global-main-color-dark-50: rgba(32, 4, 51, .5);
+    --global-main-color-60: rgba(83, 18, 127, .6);
+    --orange: #c96e06;
+    --light-orange: #b27935;
+    --green: #358e75;
+    --green2: rgb(43, 173, 110);
+    --green-40: rgba(43, 173, 110, .4);
+    --red: rgb(195, 49, 49);
+    --red-40: rgba(195, 49, 49, .4);
+    --blue: #3974c8;
+    --blue-40: #3975c83f;
+    --dark-blue: rgba(61, 112, 184, .6);
+    --dark-blue2: rgba(12, 56, 119, .6);
+    --white: rgba(255, 255, 255, 1);
+    --white-80: rgba(255, 255, 255, .8);
+    --white-70: rgba(255, 255, 255, .7);
+    --white-50: rgba(255, 255, 255, .5);
+    --white-30: rgba(255, 255, 255, .3);
+    --degrade-violet: linear-gradient(360deg, rgba(83, 18, 127, .15) 0%, rgba(2, 2, 2, 0) 100%, rgba(2, 2, 2, 0) 100%);
+    --degrade-violet2: linear-gradient(360deg, rgba(127, 18, 18, .15) 0%, rgba(2, 2, 2, 0) 100%, rgba(2, 2, 2, 0) 100%);
+    --degrade-violet-housebuilding: linear-gradient(90deg, rgba(83, 18, 127, .36) 0%, rgba(2, 2, 2, .36) 0%, rgba(83, 18, 127, .31) 100%);
+    --font-family: "Poppins";
+    --font-family-bold: "Poppins-Bold";
+    --font-family-medium: "Poppins-Medium";
+    --font-family-regular: "Poppins-Regular"
+}
+
+html,
+body,
+.root,
+.App {
+    margin: 0;
+    height: 100%;
+    width: 100%
+}
+
+body *,
+:after,
+:before {
+    -webkit-user-drag: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family), sans-serif;
+    box-sizing: border-box
+}
+
+/* Allow drag for agent cards */
+.agent-card {
+    -webkit-user-drag: element !important;
+    user-select: none !important;
+    cursor: grab !important;
+}
+
+/* Ensure child elements don't interfere with drag */
+.agent-card img,
+.agent-card span {
+    pointer-events: none !important;
+    user-select: none !important;
+    -webkit-user-drag: none !important;
+}
+
+/* Visual feedback during drag */
+.agent-card:active {
+    cursor: grabbing !important;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: #fff
+}
+
+.App-link {
+    color: #61dafb
+}
+
+@keyframes App-logo-spin {
+    0% {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+label {
+    cursor: unset !important
+}
+
+.dispatch-container,
+.dispatch-notifications {
+    --degrade-rouge: linear-gradient(to right, rgba(2, 2, 2, .4), rgb(171 27 27 / 90%));
+    --degrade-bleu: linear-gradient(to right, rgba(2, 2, 2, .4) 0%, rgba(36, 48, 62, .31) 100%);
+    --degrade-orange: linear-gradient(to right, rgba(2, 2, 2, .36) 0%, rgb(171 96 27) 100%);
+    --degrade-vert: linear-gradient(to right, rgba(2, 2, 2, .4) 0%, rgba(26, 102, 65, 031) 100%);
+    --degrade-brown: linear-gradient(to right, rgba(2, 2, 2, .4) 0%, rgba(80, 49, 21, .31) 100%);
+    --degrade-cyan: linear-gradient(to right, rgba(2, 2, 2, .4) 0%, rgba(0, 255, 255, .31) 100%);
+    --degrade-gray: linear-gradient(to right, rgba(2, 2, 2, .4) 0%, rgba(128, 128, 128, .31) 100%);
+    --degrade-pink: linear-gradient(to right, rgba(2, 2, 2, .4) 0%, rgba(255, 192, 203, .31) 100%);
+    --degrade-purple: linear-gradient(to right, rgba(2, 2, 2, .4) 0%, rgba(128, 0, 128, .31) 100%);
+    --degrade-violet: linear-gradient(to right, rgba(2, 2, 2, .4) 0%, rgba(238, 130, 238, .31) 100%);
+    --degrade-white: linear-gradient(to right, rgba(2, 2, 2, .4) 0%, rgba(255, 255, 255, .31) 100%);
+    --degrade-yellow: linear-gradient(to right, rgba(2, 2, 2, .4) 0%, rgba(255, 193, 7, .31) 100%);
+    --white-50: rgba(255, 255, 255, .5);
+    --dispatch-width: 42.31vh
+}
+
+.dispatch-container .color-blue,
+.dispatch-notifications .color-blue {
+    background: var(--degrade-bleu)
+}
+
+.dispatch-container .color-orange,
+.dispatch-notifications .color-orange {
+    background: var(--degrade-orange)
+}
+
+.dispatch-container .color-red,
+.dispatch-notifications .color-red {
+    background: var(--degrade-rouge)
+}
+
+.dispatch-container .color-green,
+.dispatch-notifications .color-green {
+    background: var(--degrade-vert)
+}
+
+.dispatch-container .color-brown,
+.dispatch-notifications .color-brown {
+    background: var(--degrade-brown)
+}
+
+.dispatch-container .color-cyan,
+.dispatch-notifications .color-cyan {
+    background: var(--degrade-cyan)
+}
+
+.dispatch-container .color-gray,
+.dispatch-notifications .color-gray {
+    background: var(--degrade-gray)
+}
+
+.dispatch-container .color-pink,
+.dispatch-notifications .color-pink {
+    background: var(--degrade-pink)
+}
+
+.dispatch-container .color-purple,
+.dispatch-notifications .color-purple {
+    background: var(--degrade-purple)
+}
+
+.dispatch-container .color-violet,
+.dispatch-notifications .color-violet {
+    background: var(--degrade-violet)
+}
+
+.dispatch-container .color-white,
+.dispatch-notifications .color-white {
+    background: var(--degrade-white)
+}
+
+.dispatch-container .color-yellow,
+.dispatch-notifications .color-yellow {
+    background: var(--degrade-yellow)
+}
+
+.dispatch-container {
+    display: flex;
+    align-items: flex-end;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    color: #fff;
+    padding-top: 2.5vh;
+    font-family: var(--font-family);
+    position: absolute
+}
+
+.dispatch-container .menu {
+    display: grid;
+    grid: auto-flow/repeat(3, 1fr);
+    width: var(--dispatch-width);
+    gap: .5vh;
+    margin-bottom: .3vh
+}
+
+.dispatch-container .menu .tab {
+    height: 2.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: .33vh;
+    font-size: 1.4vh;
+    border-radius: 2px;
+    background: var(--black2-40);
+    pointer-events: auto;
+    user-select: none;
+    z-index: 10;
+    position: relative;
+}
+
+.dispatch-container .menu .tab:first-child {
+    border-top-left-radius: .66vh
+}
+
+.dispatch-container .menu .tab:last-child {
+    border-top-right-radius: .66vh
+}
+
+.dispatch-container .menu .tab:hover {
+    background: var(--black2-60);
+}
+
+.dispatch-container .menu .tab.selected {
+    background: #4a5568;
+    color: #ffffff;
+}
+
+.dispatch-container .fade-enter {
+    opacity: 0;
+    transform: translate(100%)
+}
+
+.dispatch-container .fade-enter-active,
+.dispatch-container .fade-exit {
+    opacity: 1;
+    transform: translate(0)
+}
+
+.dispatch-container .fade-exit-active {
+    opacity: 0;
+    transform: translate(100%)
+}
+
+.dispatch-container .fade-enter-active,
+.dispatch-container .fade-exit-active {
+    transition: opacity .3s, transform .3s
+}
+
+.dispatch-container .right-clic {
+    position: absolute;
+    display: none; /* Caché par défaut */
+    flex-direction: column;
+    background: var(--black14-85);
+    font-size: 1.09vh;
+    border-radius: .36vh;
+    padding: 1.14vh 0;
+    gap: .71vh;
+    width: 24vh
+}
+
+.dispatch-container .right-clic .clic-hover {
+    display: flex;
+    align-items: center;
+    height: 2.31vh;
+    width: 100%;
+    padding: 0 1.71vh;
+    cursor: pointer
+}
+
+.dispatch-container .right-clic .clic-hover:hover {
+    background: var(--black2-60);
+    background-size: cover;
+    width: 100%;
+    height: 2.31vh
+}
+
+.dispatch-container .right-clic .clic-hover:hover img {
+    width: 1.24vh;
+    height: 1.24vh
+}
+
+.dispatch-container .right-clic .call {
+    display: flex;
+    align-items: center;
+    gap: .71vh
+}
+
+.dispatch-container .right-clic .call img {
+    width: 1.24vh;
+    height: 1.24vh
+}
+
+.dispatch-container hr {
+    border-width: .09vh !important;
+    margin-block: .36vh !important;
+    width: 100%;
+    opacity: 20%
+}
+
+.dispatch-container p {
+    display: flex;
+    align-items: center
+}
+
+.dispatch-container .list {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    width: var(--dispatch-width);
+    overflow-y: auto
+}
+
+.dispatch-container .list::-webkit-scrollbar {
+    width: 0
+}
+
+.dispatch-container .squads {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.dispatch-container .list.squads {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    gap: 1vh;
+    overflow-y: auto;
+}
+
+.dispatch-container .new-squad {
+    width: 100%;
+    min-height: 10vh;
+    border-radius: .1vh;
+    display: none !important;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black2-60);
+    margin-bottom: 1vh;
+    transition: opacity .2s, border-color .2s;
+    border: .25vh solid rgba(0, 0, 0, 0)
+}
+
+.dispatch-container .new-squad.active {
+    display: flex !important;
+}
+
+.dispatch-container .new-squad.over {
+    border: .25vh solid #1e3f66
+}
+
+.dispatch-container .call-card,
+.dispatch-notifications .call-card {
+    padding: 1vh 2vh;
+    width: var(--dispatch-width);
+    border-radius: .23vh;
+    display: flex;
+    flex-direction: column;
+    gap: .8vh
+}
+
+.dispatch-container .call-card .header,
+.dispatch-notifications .call-card .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.dispatch-container .call-card .header .title,
+.dispatch-notifications .call-card .header .title {
+    display: flex;
+    gap: .76vh;
+    align-items: center;
+    font-size: 1.3vh;
+    font-weight: 500
+}
+
+.dispatch-container .call-card .header .title .case-list,
+.dispatch-notifications .call-card .header .title .case-list {
+    display: flex;
+    gap: 2px;
+    align-items: center
+}
+
+.dispatch-container .call-card .header .title .case,
+.dispatch-notifications .call-card .header .title .case {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--black2-60);
+    min-width: 2.4vh;
+    height: 2.4vh;
+    padding: .5vh
+}
+
+.dispatch-container .call-card .header .title .case:first-child,
+.dispatch-notifications .call-card .header .title .case:first-child {
+    border-radius: .33vh 0 0 .33vh
+}
+
+.dispatch-container .call-card .header .title .case:last-child,
+.dispatch-notifications .call-card .header .title .case:last-child {
+    border-radius: 0 .33vh .33vh 0
+}
+
+.dispatch-container .call-card .header .title .case img,
+.dispatch-notifications .call-card .header .title .case img {
+    width: 100%;
+    height: 100%
+}
+
+.dispatch-container .call-card .header .timing,
+.dispatch-notifications .call-card .header .timing {
+    font-size: .8vh;
+    color: var(--white-50);
+    font-weight: 300
+}
+
+.dispatch-container .call-card .description,
+.dispatch-notifications .call-card .description {
+    font-size: 1vh;
+    font-weight: 200
+}
+
+.dispatch-container .call-card .description b,
+.dispatch-notifications .call-card .description b {
+    font-size: 1.2vh
+}
+
+.dispatch-container .call-card .call,
+.dispatch-notifications .call-card .call {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.13vh;
+    font-size: .91vh;
+    gap: .23vh
+}
+
+.dispatch-container .call-card .call-squads,
+.dispatch-notifications .call-card .call-squads {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: .91vh;
+    gap: .4vh
+}
+
+.dispatch-container .call-card .call-squads p,
+.dispatch-notifications .call-card .call-squads p {
+    background: var(--black2-60);
+    padding: .23vh .68vh;
+    border-radius: .23vh
+}
+
+.dispatch-container .dispatch-header {
+    display: flex;
+    align-items: center;
+    width: var(--dispatch-width);
+    background: var(--black2-40);
+    padding: .91vh 2.27vh;
+    border-radius: .23vh;
+    font-size: 1.13vh;
+    margin-bottom: .3vh
+}
+
+@keyframes dispatchFlashing {
+    0% {
+        background-color: var(--red)
+    }
+
+    50% {
+        background-color: var(--black2-60)
+    }
+
+    to {
+        background-color: var(--red)
+    }
+}
+
+.dispatch-container .dispatch-header .flashing {
+    animation: dispatchFlashing 1s infinite
+}
+
+.dispatch-container .dispatch-header .info,
+.dispatch-container .dispatch-header .action,
+.dispatch-container .dispatch-header .backup {
+    display: flex;
+    align-items: center;
+    gap: 3.1875%
+}
+
+.dispatch-container .dispatch-header .info>div {
+    background: var(--black2-60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.83vh;
+    border-radius: .23vh
+}
+
+.dispatch-container .dispatch-header .info .matricule {
+    width: 2.83vh;
+    padding: .57vh;
+    cursor: pointer
+}
+
+.dispatch-container .dispatch-header .info .current-group {
+    width: 7.11vh;
+    padding: 1.275%;
+    cursor: pointer
+}
+
+.dispatch-container .dispatch-header .info .current-group.disabled {
+    opacity: 50%;
+    cursor: not-allowed
+}
+
+.dispatch-container .dispatch-header .deroul-container {
+    position: absolute;
+    margin-top: 5vh;
+    display: flex;
+    align-content: center;
+    justify-content: center
+}
+
+.dispatch-container .dispatch-header .deroul-container .deroul {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--black2-60);
+    padding: .3vh;
+    border-radius: .2vh;
+    font-size: 1.35vh;
+    z-index: 2;
+    max-height: 40vh;
+    overflow-y: auto
+}
+
+.dispatch-container .dispatch-header .deroul-container .deroul .btn {
+    margin: .4vh;
+    background: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .35vh;
+    width: auto;
+    height: 2.8vh;
+    padding: .55vh;
+    border-radius: .2vh;
+    white-space: nowrap
+}
+
+.dispatch-container .dispatch-header .deroul-container .deroul .btn img {
+    width: 1.5vh;
+    height: 1.5vh
+}
+
+.dispatch-container .dispatch-header .action {
+    justify-content: flex-end;
+    width: 100%
+}
+
+.dispatch-container .dispatch-header .action.disabled {
+    opacity: 50%
+}
+
+.dispatch-container .dispatch-header .action .action-button {
+    background: var(--black2-60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 2.83vh;
+    height: 2.83vh;
+    padding: .57vh;
+    border-radius: .23vh
+}
+
+.dispatch-container .dispatch-header .action .action-button img {
+    width: 1.51vh;
+    height: 1.51vh
+}
+
+.dispatch-container .dispatch-header .action .action-button.active {
+    background-color: var(--green)
+}
+
+.dispatch-container .dispatch-header .action .action-button.disabled {
+    background-color: var(--grey);
+    cursor: not-allowed
+}
+
+.dispatch-container .dispatch-header .action .dispatcher {
+    background: var(--blue);
+    gap: .34vh;
+    width: 4.91vh;
+    font-size: 1.36vh
+}
+
+.dispatch-container .dispatch-header .action .dispatcher .dispatcher-button {
+    display: flex;
+    align-items: center
+}
+
+.dispatch-container .dispatch-header .action .dispatcher.disabled {
+    background-color: var(--grey);
+    cursor: not-allowed
+}
+
+.dispatch-container .dispatch-header .action .service {
+    background: var(--red)
+}
+
+.dispatch-container .dispatch-header .action .member {
+    background: var(--black2-60)
+}
+
+.dispatch-container .dispatch-header .action .notif {
+    background: var(--red)
+}
+
+.dispatch-container .dispatch-header .backup {
+    justify-content: flex-end;
+    width: 100%
+}
+
+.dispatch-container .dispatch-header .backup .action-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 2.83vh;
+    height: 2.83vh;
+    padding: .57vh;
+    border-radius: .23vh
+}
+
+.dispatch-container .dispatch-header .backup .action-button svg {
+    width: 1.6vh;
+    height: 1.6vh
+}
+
+.dispatch-container .dispatch-header .backup .action-button.disabled {
+    opacity: 50%;
+    background-color: var(--grey);
+    cursor: not-allowed
+}
+
+.dispatch-container .dispatch-header .backup .one {
+    background: var(--green)
+}
+
+.dispatch-container .dispatch-header .backup .two {
+    background: var(--orange)
+}
+
+.dispatch-container .dispatch-header .backup .three {
+    background: var(--red)
+}
+
+.dispatch-container .squads .status-menu {
+    display: none; /* Temporairement caché */
+    gap: 1vh;
+    margin-bottom: 2vh;
+    padding: 1vh;
+    background: var(--black2-40);
+    border-radius: .23vh;
+    flex-shrink: 0;
+}
+
+.dispatch-container .squads .status-menu .status-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .7vh 1.5vh;
+    border-radius: .2vh;
+    background: var(--black-40);
+    font-size: 1.1vh;
+    border: solid .1vh rgba(0, 0, 0, 0);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.dispatch-container .squads .status-menu .status-item:hover {
+    transform: scale(1.05);
+}
+
+.dispatch-container .squads .status-menu .status-item.active {
+    background: var(--global-main-color)
+}
+
+.dispatch-container .squads .status-menu .status-item.active.red,
+.dispatch-container .squads .status-menu .status-item:hover.red {
+    background: var(--red)
+}
+
+.dispatch-container .squads .status-menu .status-item.active.orange,
+.dispatch-container .squads .status-menu .status-item:hover.orange {
+    background: var(--orange)
+}
+
+.dispatch-container .squads .status-menu .status-item.active.green,
+.dispatch-container .squads .status-menu .status-item:hover.green {
+    background: var(--green)
+}
+
+.dispatch-container .squads .status-menu .status-item.active.gray,
+.dispatch-container .squads .status-menu .status-item:hover.gray {
+    background: var(--black-40);
+    border: solid .1vh var(--white-30)
+}
+
+.dispatch-container .squads-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: background .1s linear
+}
+
+.dispatch-container .squads-card.default {
+    gap: .1vh
+}
+
+.dispatch-container .squads-card.over {
+    background: rgba(30, 63, 102, .3)
+}
+
+.dispatch-container .squads-card .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--black2-60);
+    padding: .91vh 2.27vh;
+    border-radius: .23vh .23vh 0 0;
+    height: 3.56vh;
+    font-size: 1.36vh;
+    gap: 1.51vh;
+    cursor: pointer
+}
+
+.dispatch-container .squads-card .title .status {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 5%;
+    padding: .5vh 1vh;
+    border-radius: .1vh;
+    font-size: 1.3vh;
+    height: 2.5vh;
+    border: solid .1vh var(--white-10);
+    background: var(--black2-40)
+}
+
+.dispatch-container .squads-card .title .status.red {
+    background: var(--red)
+}
+
+.dispatch-container .squads-card .title .status.orange {
+    background: var(--orange)
+}
+
+.dispatch-container .squads-card .title .status.green {
+    background: var(--green)
+}
+
+.dispatch-container .squads-card .title .status.gray {
+    background: var(--black-40)
+}
+
+.dispatch-container .squads-card .title .title-edit {
+    all: unset;
+    background: transparent;
+    height: 150%;
+    text-align: center;
+    border-radius: .3vh;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.dispatch-container .squads-card .title .title-edit.editable {
+    pointer-events: auto;
+    opacity: 1;
+    cursor: text;
+    background: var(--black2-40);
+    border-radius: .3vh;
+}
+
+.dispatch-container .squads-card .title .utils {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    gap: .53vh;
+    right: 5%
+}
+
+.dispatch-container .squads-card .title .btn {
+    cursor: pointer;
+    background: var(--black2-60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.42vh;
+    width: 2.42vh;
+    padding: .57vh;
+    border-radius: 88.89vh;
+    font-size: 1.13vh
+}
+
+.dispatch-container .squads-card .title .btn svg,
+.dispatch-container .squads-card .title .btn img {
+    width: 1.36vh;
+    height: 1.36vh
+}
+
+.dispatch-container .squads-card .title .radio {
+    min-width: 2.42vh;
+    width: unset
+}
+
+.dispatch-container .squads-card .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--black2-40);
+    padding: .91vh 2.27vh;
+    height: 3.56vh;
+    width: var(--dispatch-width);
+    font-size: 1.13vh
+}
+
+.dispatch-container .squads-card .agent-card {
+    cursor: grab;
+}
+
+.dispatch-container .squads-card .agent-card:active {
+    cursor: grabbing;
+}
+
+.dispatch-container .squads-card .agent-card img,
+.dispatch-container .squads-card .agent-card span {
+    pointer-events: none;
+    user-select: none;
+}
+
+.dispatch-container .squads-card .card:last-child {
+    border-radius: 0 0 .23vh .23vh
+}
+
+.dispatch-container .squads-card .card:focus-visible {
+    outline: unset !important
+}
+
+.dispatch-container .squads-card .card svg,
+.dispatch-container .squads-card .card img {
+    background: var(--black2-60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.42vh;
+    height: 2.42vh;
+    padding: .35vh;
+    border-radius: .23vh
+}
+
+
+
+.dispatch-notifications {
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1vh;
+    color: #fff;
+    width: var(--dispatch-width)
+}
+
+.dispatch-notifications .call-card.enter {
+    opacity: 0;
+    transform: translate(100%)
+}
+
+.dispatch-notifications .call-card.enter-active,
+.dispatch-notifications .call-card.exit {
+    opacity: 1;
+    transform: translate(0)
+}
+
+.dispatch-notifications .call-card.exit-active {
+    opacity: 0;
+    transform: translate(100%)
+}
+
+.dispatch-notifications .call-card.enter-active,
+.dispatch-notifications .call-card.exit-active {
+    transition: opacity .3s, transform .3s
+}
+
+.dispatch-container .list.wanted {
+    width: var(--dispatch-width);
+    gap: .9vh
+}
+
+.dispatch-container .list.wanted .search-bar {
+    height: 3.2vh;
+    font-size: 1.3vh;
+    width: 100%;
+    border-radius: .23vh;
+    padding: 0 2vh;
+    background-color: var(--black2-40);
+    position: relative
+}
+
+.dispatch-container .list.wanted .search-bar input {
+    all: unset;
+    width: 100%;
+    height: 100%
+}
+
+.dispatch-container .list.wanted .search-bar input::placeholder {
+    color: #fffc
+}
+
+.dispatch-container .list.wanted .search-bar svg {
+    position: absolute;
+    right: 1.5%;
+    width: 10%;
+    height: 100%;
+    transform: scale(.6)
+}
+
+.dispatch-container .list.wanted .wanted-category .header {
+    height: 2.8vh;
+    border-radius: .23vh;
+    background-color: var(--black2-40);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vh;
+    font-size: 1.2vh
+}
+
+.dispatch-container .list.wanted .wanted-category .header .new {
+    width: 1.7vh;
+    height: 1.7vh;
+    cursor: pointer;
+    border-radius: .23vh;
+    background-color: var(--black2-40)
+}
+
+.dispatch-container .list.wanted .wanted-category .header .title {
+    display: flex;
+    align-items: center;
+    gap: .9vh
+}
+
+.dispatch-container .list.wanted .wanted-category .header .title svg {
+    transform: scale(1.4)
+}
+
+.dispatch-container .list.wanted .wanted-category .header .expand,
+.dispatch-container .list.wanted .wanted-category-civil .header .expand,
+.dispatch-container .list.wanted .wanted-category-vehicule .header .expand {
+    width: 1.3vh;
+    transition: transform .3s ease;
+    cursor: pointer;
+}
+
+.dispatch-container .list.wanted .wanted-category .header .expand.rotate,
+.dispatch-container .list.wanted .wanted-category-civil .header .expand.rotate,
+.dispatch-container .list.wanted .wanted-category-vehicule .header .expand.rotate {
+    transform: rotate(-90deg);
+}
+
+.dispatch-container .list.wanted .wanted-category .list,
+.dispatch-container .list.wanted .wanted-category-civil .list,
+.dispatch-container .list.wanted .wanted-category-vehicule .list {
+    height: auto !important;
+    opacity: 1 !important;
+    transition: opacity .3s ease, height .3s ease;
+    margin-top: .5vh;
+    display: flex !important;
+    flex-direction: column;
+    gap: 1vh;
+    visibility: visible !important;
+    overflow: hidden;
+}
+
+.dispatch-container .list.wanted .wanted-category .list.expand,
+.dispatch-container .list.wanted .wanted-category-civil .list.expand,
+.dispatch-container .list.wanted .wanted-category-vehicule .list.expand {
+    opacity: 1 !important;
+    height: auto !important;
+    display: flex !important;
+    visibility: visible !important;
+}
+
+.dispatch-container .list.wanted .wanted-category .list:not(.expand),
+.dispatch-container .list.wanted .wanted-category-civil .list:not(.expand),
+.dispatch-container .list.wanted .wanted-category-vehicule .list:not(.expand) {
+    opacity: 0;
+    height: 0;
+    display: none;
+    visibility: hidden;
+    margin-top: 0;
+}
+
+.dispatch-container .list.wanted .wanted-card {
+    display: flex !important;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+    padding: .8vh 2vh;
+    font-size: 1.1vh;
+    border-radius: .23vh;
+    background-color: var(--black2-40);
+    gap: .27vh;
+    min-height: 5vh;
+    margin-bottom: 1vh;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+}
+
+.dispatch-container .list.wanted .wanted-card input,
+.dispatch-container .list.wanted .wanted-card textarea {
+    all: unset;
+    font-size: 1.2vh;
+    background: var(--black2-40);
+    color: var(--white);
+    border: solid 1px var(--white-50);
+    border-radius: .1vh;
+    padding: .5% 2%
+}
+
+.dispatch-container .list.wanted .wanted-card input {
+    width: 75%
+}
+
+.dispatch-container .list.wanted .wanted-card .buttons {
+    display: flex;
+    position: absolute;
+    right: 1.7vh;
+    top: 1vh
+}
+
+.dispatch-container .list.wanted .wanted-card .buttons svg {
+    height: 1.75vh;
+    width: 1.75vh;
+    cursor: pointer;
+    margin-left: .5vw
+}
+
+.dispatch-container .list.wanted .wanted-card .title {
+    font-weight: 500;
+    font-size: 1.3vh
+}
+
+.dispatch-container .list.wanted .wanted-card .reason {
+    line-height: 1;
+    margin-bottom: 1%
+}
+
+.dispatch-container .list.wanted .wanted-card .description::-webkit-scrollbar,
+.dispatch-container .list.wanted .wanted-card .description::-webkit-scrollbar-thumb {
+    border-radius: 0
+}
+
+/* Amélioration du menu contextuel */
+.right-clic {
+    display: none; /* Caché par défaut */
+    z-index: 9999;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--white-10);
+    position: fixed;
+}
+
+.right-clic .clic-hover {
+    transition: background-color 0.2s ease;
+}
+
+.right-clic .clic-hover:hover {
+    background-color: var(--global-main-color);
+}
+
+/* Styles pour les boutons de dispatch */
+.dispatch-header .action-button {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dispatch-header .action-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Supprimer les animations de hover pour les boutons backup */
+.dispatch-header .backup .action-button {
+    transition: none !important;
+}
+
+.dispatch-header .backup .action-button:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Supprimer les changements de couleur au clic/focus pour les boutons backup */
+.dispatch-header .backup .action-button:active,
+.dispatch-header .backup .action-button:focus,
+.dispatch-header .backup .action-button:focus-visible {
+    outline: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.dispatch-header .backup .action-button.one:active,
+.dispatch-header .backup .action-button.one:focus {
+    background: var(--green) !important;
+}
+
+.dispatch-header .backup .action-button.two:active,
+.dispatch-header .backup .action-button.two:focus {
+    background: var(--orange) !important;
+}
+
+.dispatch-header .backup .action-button.three:active,
+.dispatch-header .backup .action-button.three:focus {
+    background: var(--red) !important;
+}
+
+/* Styles pour les équipes en drag & drop */
+.squads-card.over {
+    background: var(--black2-20);
+}
+
+/* Styles pour la barre de recherche */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar img {
+    position: absolute;
+    right: 10px;
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+}
+
+/* Styles pour les boutons d'édition */
+.buttons img {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.buttons img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Désactiver complètement les notifications */
+.dispatch-header .notif.action-button {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none !important;
+}
+
+.notif-container .notif-list .notif {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+.call-card, .dispatch-notifications .call-card {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* Styles pour les nouvelles icônes dans les call-cards */
+.call-icon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+    opacity: 0.8;
+    filter: brightness(1.2);
+}
+
+.call span {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.call span:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vehicle-grid,
+    .face-grid,
+    .clothing-categories,
+    .controls-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .skeleton-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .skeleton-image {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .vehicle-grid,
+    .clothing-categories,
+    .controls-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .face-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Wanted elements display rules */
+.dispatch-container .list.wanted .wanted-category .list {
+    height: auto !important;
+    opacity: 1 !important;
+    display: flex !important;
+    flex-direction: column;
+    gap: 1vh;
+    visibility: visible !important;
+}
+
+.dispatch-container .list.wanted .wanted-card {
+    display: flex !important;
+    flex-direction: column;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    margin-bottom: 1vh;
+}
+
+/* Masquer complètement les barres de progression violettes des notifications */
+.notif-container .notif-list .notif .progress-back {
+    display: none !important;
+}
+
+.notif-container .notif-list .notif .progress-back .progress-bar {
+    display: none !important;
+}

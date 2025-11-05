@@ -1,0 +1,26 @@
+-- À insérer dans ox_inventory/data/items.lua
+-- Exemple :
+-- ["stimulant_combat"] = {label = "Stimulant de combat", weight = 100, stack = true, close = true, description = "Boost combat"},
+return {
+    stimulant_combat = {
+        label = "Stimulant de combat",
+        weight = 100,
+        stack = true,
+        close = true,
+        description = "Vitesse +25%, invincibilité 8s. Zones de guerre uniquement."
+    },
+    stimulant_vitesse = {
+        label = "Stimulant de vitesse",
+        weight = 100,
+        stack = true,
+        close = true,
+        description = "Vitesse +50% pendant 10s. Zones de guerre uniquement."
+    },
+    stimulant_vie = {
+        label = "Stimulant de vie",
+        weight = 100,
+        stack = true,
+        close = true,
+        description = "Invincibilité pendant 5s. Zones de guerre uniquement."
+    }
+}

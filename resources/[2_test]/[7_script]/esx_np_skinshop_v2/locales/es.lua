@@ -1,0 +1,42 @@
+﻿--[[
+  GuerreRP - Base publique
+  Développé et maintenu par Ducratif
+
+  Discord : https://discord.gg/kpD8pQBBWm
+  Documentation : https://github.com/Ducratif/guerrerp
+
+  Merci de ne pas retirer ce crédit si vous utilisez ou modifiez cette ressource.
+]]
+Locales['es'] = {
+  ['valid_this_purchase'] = '¿Validar esta compra?',
+  ['yes'] = 'Si (<span style="color: green;">$%s</span>)',
+  ['yes2'] = 'Si',
+  ['no'] = 'No',
+  ['not_enough_money'] = 'No tienes suficiente dinero',
+  ['press_menu'] = 'Presiona ~INPUT_CONTEXT~ para acceder al menú',
+  ['clothes'] = 'Ropa',
+  ['you_paid'] = 'Has pagado ~g~$%s~s~',
+  ['save_in_dressing'] = '¿Quieres darle un nombre a tu vestuario?',
+  ['name_outfit'] = '¿Nombre del conjunto?',
+  ['saved_outfit'] = '¡El conjunto ha sido guardado!',
+  ['outfit_menu'] = '¿Qué deseas hacer?',
+  ['outfit'] = 'Gestionar Conjuntos',
+  ['buy'] = 'Comprar ropa',
+  ['no_outfit'] = 'No posees ningún conjunto guardado',
+  ['saved_outfits'] = 'Conjuntos Guardados',
+  ['change_clothe'] = "Vestir Conjunto",
+  ['del_clothe'] = "Eliminar Conjunto",
+  ['choose_clothe'] = '¿Qué conjunto quieres usar?',
+  ['which_delete'] = '¿Qué conjunto quieres eliminar?',
+  ['clothe_delete'] = 'Conjunto Eliminado',
+}
+
+--[[
+  GuerreRP - Base publique
+  Développé et maintenu par Ducratif
+
+  Discord : https://discord.gg/kpD8pQBBWm
+  Documentation : https://github.com/Ducratif/guerrerp
+
+  Merci de ne pas retirer ce crédit si vous utilisez ou modifiez cette ressource.
+]]

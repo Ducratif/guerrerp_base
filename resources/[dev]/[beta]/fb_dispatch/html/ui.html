@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispatch System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="root">
+        <div class="App">
+            <!-- Main Dispatch Container -->
+            <div class="dispatch-container">
+                <!-- Menu Tabs -->
+                <div class="menu">
+                    <div class="tab selected">Notifications</div>
+                    <div class="tab">Unités</div>
+                    <div class="tab">Recherchés</div>
+                </div>
+
+                <!-- Dispatch Header -->
+                <div class="dispatch-header">
+                    <div class="flashing"></div>
+                    
+                    <div class="info">
+                        <div class="matricule">XX</div>
+                        <div class="current-group">Groupe XX</div>
+                    </div>
+
+                    <div class="backup">
+                        <div class="action-button one" title="Renfort niveau 1">
+                            <img src="build/media/weapon.e03e71244124a1f55fda7561e7cd80f6.svg" alt="backup 1">
+                        </div>
+                        <div class="action-button two" title="Renfort niveau 2">
+                            <img src="build/media/weapon.e03e71244124a1f55fda7561e7cd80f6.svg" alt="backup 2">
+                        </div>
+                        <div class="action-button three" title="Renfort niveau 3">
+                            <img src="build/media/weapon.e03e71244124a1f55fda7561e7cd80f6.svg" alt="backup 3">
+                        </div>
+                    </div>
+
+                    <div class="action">
+                        <div class="action-button active" title="Statut en service">
+                            <img src="build/media/on.e6db037e1db2cd0a2b166db2dc88d43d.svg" alt="service">
+                        </div>   
+                        <div class="service action-button" title="Service actuel">
+                            <img src="build/media/player.0ba8bc6495d555073e78453185f97899.svg" alt="service">
+                        </div>
+                        <div class="notif action-button" title="Notifications">
+                            <img src="build/media/notif.ccf5d766cfe8b3092eacd1b4790c8d38.svg" alt="notifications">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Click Menu -->
+                <div class="right-clic">
+                    <div class="clic-hover">
+                        <img src="build/media/pointer.e23c225feeb4381a6a94b3da7415b030.svg" alt="hover">
+                        <span>Prendre l'appel</span>
+                    </div>
+                    <div class="call">
+                        <img src="build/media/notif.ccf5d766cfe8b3092eacd1b4790c8d38.svg" alt="call">
+                        <span>Assigner équipe</span>
+                    </div>
+                    <div class="clic-hover">
+                        <img src="build/media/cross.941e01b75254f98d9a2e2950c3cb3bcf.svg" alt="close">
+                        <span>Fermer appel</span>
+                    </div>
+                    <div class="clic-hover">
+                        <img src="build/media/cross.941e01b75254f98d9a2e2950c3cb3bcf.svg" alt="close">
+                        <span>Supprimer touts les appels</span>
+                    </div>
+                </div>
+
+                <!-- Call Cards List -->
+                <div class="list">
+                    <div class="call-card color-red">
+                        <div class="header">
+                            <div class="title">
+                                <div class="case-list">
+                                    <div class="case">
+                                        <img src="build/media/weapon.e03e71244124a1f55fda7561e7cd80f6.svg" alt="weapon">
+                                    </div>
+                                    <div class="case case-id">
+                                        186
+                                    </div>
+                                </div>
+                                <span>Vol à main armée</span>
+                            </div>
+                            <div class="timing">15:30</div>
+                        </div>
+                        <div class="description">
+                            Modèle : <b>Tornado2</b> Plaque : <b>87RLN031</b> Rue <b>Great Ocean Highway</b>
+                        </div>
+                        <div class="call-squads">
+                        </div>
+                    </div>
+
+                    <div class="call-card color-green">
+                        <div class="header">
+                            <div class="title">
+                                <div class="case-list">
+                                    <div class="case">
+                                        <img src="build/media/weapon.e03e71244124a1f55fda7561e7cd80f6.svg" alt="weapon">
+                                    </div>
+                                    <div class="case case-id">
+                                        186
+                                    </div>
+                                </div>
+                                <span>Vente de drogue</span>
+                            </div>
+                            <div class="timing">15:30</div>
+                        </div>
+                        <div class="description">
+                            Rue <b>Paleto Boulvard</b>
+                        </div>
+                        <div class="call-squads">
+                        </div>
+                    </div>
+
+                    <div class="call-card color-green">
+                        <div class="header">
+                            <div class="title">
+                                <div class="case-list">
+                                    <div class="case">
+                                        <img src="build/media/weapon.e03e71244124a1f55fda7561e7cd80f6.svg" alt="weapon">
+                                    </div>
+                                    <div class="case case-id">
+                                        186
+                                    </div>
+                                </div>
+                                <span>Backup SASP SUD niveau 1</span>
+                            </div>
+                            <div class="timing">15:30</div>
+                        </div>
+                        <div class="description">
+                            Besoin d'aide dans la <b> Rue Paleto Boulvard</b> par l'agent <b>59</b>
+                        </div>
+                        <div class="call-squads">
+                        </div>
+                    </div>
+
+                    <div class="call-card color-orange">
+                        <div class="header">
+                            <div class="title">
+                                <div class="case-list">
+                                    <div class="case">
+                                        <img src="build/media/weapon.e03e71244124a1f55fda7561e7cd80f6.svg" alt="weapon">
+                                    </div>
+                                    <div class="case case-id">
+                                        186
+                                    </div>
+                                </div>
+                                <span>Backup SASP SUD niveau 2</span>
+                            </div>
+                            <div class="timing">15:30</div>
+                        </div>
+                        <div class="description">
+                            Besoin d'aide dans la <b> Rue Paleto Boulvard</b> par l'agent <b>59</b>
+                        </div>
+                        <div class="call-squads">
+                        </div>
+                    </div>
+
+                    <div class="call-card color-red">
+                        <div class="header">
+                            <div class="title">
+                                <div class="case-list">
+                                    <div class="case">
+                                        <img src="build/media/weapon.e03e71244124a1f55fda7561e7cd80f6.svg" alt="weapon">
+                                    </div>
+                                    <div class="case case-id">
+                                        186
+                                    </div>
+                                </div>
+                                <span>Backup SASP SUD niveau 3</span>
+                            </div>
+                            <div class="timing">15:30</div>
+                        </div>
+                        <div class="description">
+                            Besoin d'aide dans la <b> Rue Paleto Boulvard</b> par l'agent <b>59</b>
+                        </div>
+                        <div class="call-squads">
+                        </div>
+                    </div>
+                </div>
+                <!-- Squads Section -->
+                <div class="squads">
+                    <div class="status-menu">
+                        <div class="status-item gray">N/A</div>
+                        <div class="status-item green">Code 6</div>
+                        <div class="status-item orange">Code 7</div>
+                        <div class="status-item green">10-13</div>
+                        <div class="status-item active red">10-6</div>
+                        <div class="status-item orange">10-38</div>
+                    </div>
+
+                    <div class="list squads">
+                        <div class="squads-card default" data-squad-name="Équipe Alpha">
+                            <div class="title">
+                                <div class="status red">OCCUPÉ</div>
+                                <input type="text" class="title-edit" value="Équipe Alpha">
+                                <div class="utils">
+                                    <div class="btn" title="Modifier">
+                                        <img src="build/media/more options.4708a32de5c6696a71f7d841e94c489f.svg" alt="options">
+                                    </div>
+                                    <div class="btn radio" title="Radio">
+                                        <img src="build/media/speaker.d8c776b0d17517e637ba1e2030897690.svg" alt="radio">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card agent-card" draggable="true" data-agent-id="MAT001" data-agent-name="Agent Smith - MAT001">
+                                <img src="build/media/player.0ba8bc6495d555073e78453185f97899.svg" alt="officer">
+                                <span>Agent Smith - MAT001</span>
+                            </div>
+                            <div class="card agent-card" draggable="true" data-agent-id="MAT002" data-agent-name="Agent Jones - MAT002">
+                                <img src="build/media/player.0ba8bc6495d555073e78453185f97899.svg" alt="officer">
+                                <span>Agent Jones - MAT002</span>
+                            </div>
+                        </div>
+
+                        <div class="squads-card default" data-squad-name="Équipe Bravo">
+                            <div class="title">
+                                <div class="status green">LIBRE</div>
+                                <input type="text" class="title-edit" value="Équipe Bravo">
+                                <div class="utils">
+                                    <div class="btn" title="Modifier">
+                                        <img src="build/media/more options.4708a32de5c6696a71f7d841e94c489f.svg" alt="options">
+                                    </div>
+                                    <div class="btn radio" title="Radio">
+                                        <img src="build/media/speaker.d8c776b0d17517e637ba1e2030897690.svg" alt="radio">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card agent-card" draggable="true" data-agent-id="MAT003" data-agent-name="Agent Brown - MAT003">
+                                <img src="build/media/player.0ba8bc6495d555073e78453185f97899.svg" alt="officer">
+                                <span>Agent Brown - MAT003</span>
+                            </div>
+                            <div class="card agent-card" draggable="true" data-agent-id="MAT004" data-agent-name="Agent Davis - MAT004">
+                                <img src="build/media/player.0ba8bc6495d555073e78453185f97899.svg" alt="officer">
+                                <span>Agent Davis - MAT004</span>
+                            </div>
+                        </div>
+
+                        <div class="squads-card default" data-squad-name="En Service">
+                            <div class="title">En Service</div>
+                            <div class="card agent-card" draggable="true" data-agent-id="MAT005" data-agent-name="Azale">
+                                <img src="build/media/player.0ba8bc6495d555073e78453185f97899.svg" alt="officer">
+                                <span>Azale</span>
+                            </div>
+                        </div>
+
+                        <div class="new-squad">
+                            <span>Nouvelle équipe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wanted List -->
+                <div class="list wanted">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Rechercher...">
+                        <img src="build/media/search.4a85db57ab2f7c04b8eacf0ce2c7c3e0.svg" alt="search">
+                    </div>
+
+                    <!-- Civil Category -->
+                    <div class="wanted-category wanted-category-civil">
+                        <div class="header">
+                            <div class="new" title="Ajouter nouveau suspect">
+                                <img src="build/media/add.dc01bc5e62fe7d0b99f1c5e0fd8d14f2.svg" alt="add">
+                            </div>
+                            <div class="title">
+                                <span>Civils Recherchés</span>
+                            </div>
+                            <div class="expand rotate">
+                                <img src="build/media/right-down.10c91f5324540cbc5f6ecfa3beba0e99.svg" alt="expand">
+                            </div>
+                        </div>
+                        <div class="list expand">
+                            <div class="wanted-card">
+                                <div class="title">John Doe</div>
+                                <div class="reason">Vol à main armée - Agression</div>
+                                <div class="description">
+                                    Homme caucasien, 1m80, cheveux bruns, dernière fois vu près du centre commercial avec une arme blanche.
+                                    Considéré comme dangereux.
+                                </div>
+                                <div class="buttons">
+                                    <img src="build/media/cross.941e01b75254f98d9a2e2950c3cb3bcf.svg" alt="delete" title="Supprimer">
+                                </div>
+                            </div>
+
+                            <div class="wanted-card">
+                                <div class="title">Jane Smith</div>
+                                <div class="reason">Complicité - Recel</div>
+                                <div class="description">
+                                    Femme blonde, 1m65, tatouage au bras droit. Vue en compagnie du suspect principal.
+                                    Approcher avec précaution.
+                                </div>
+                                <div class="buttons">
+                                    <img src="build/media/cross.941e01b75254f98d9a2e2950c3cb3bcf.svg" alt="delete" title="Supprimer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Category -->
+                    <div class="wanted-category wanted-category-vehicule">
+                        <div class="header">
+                            <div class="new" title="Ajouter nouveau véhicule recherché">
+                                <img src="build/media/add.dc01bc5e62fe7d0b99f1c5e0fd8d14f2.svg" alt="add">
+                            </div>
+                            <div class="title">
+                                <span>Véhicules Recherchés</span>
+                            </div>
+                            <div class="expand rotate">
+                                <img src="build/media/right-down.10c91f5324540cbc5f6ecfa3beba0e99.svg" alt="expand">
+                            </div>
+                        </div>
+                        <div class="list expand">
+                            <div class="wanted-card">
+                                <div class="title">ABC-123</div>
+                                <div class="reason">Vol de véhicule - Fuite</div>
+                                <div class="description">
+                                    BMW X5 noire, immatriculée ABC-123. Volée hier soir au centre-ville.
+                                    Dernière localisation: Autoroute A1.
+                                </div>
+                                <div class="buttons">
+                                    <img src="build/media/cross.941e01b75254f98d9a2e2950c3cb3bcf.svg" alt="delete" title="Supprimer">
+                                </div>
+                            </div>
+
+                            <div class="wanted-card">
+                                <div class="title">XYZ-789</div>
+                                <div class="reason">Délit de fuite - Accident</div>
+                                <div class="description">
+                                    Audi A4 blanche, plaque XYZ-789. Impliquée dans un accident avec délit de fuite.
+                                    Pare-choc avant endommagé côté droit.
+                                </div>
+                                <div class="buttons">
+                                    <img src="build/media/cross.941e01b75254f98d9a2e2950c3cb3bcf.svg" alt="delete" title="Supprimer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Dispatch Notifications -->
+            <div class="dispatch-notifications">
+                <div class="call-card enter color-blue">
+                    <div class="header">
+                        <div class="title">Nouvel appel</div>
+                        <div class="timing">16:45</div>
+                    </div>
+                    <div class="description">
+                        <b>Notification</b> - Nouvel incident signalé
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

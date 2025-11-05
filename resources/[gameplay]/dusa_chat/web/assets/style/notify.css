@@ -1,0 +1,162 @@
+:root{
+    --warning: linear-gradient(91deg, #261709 2.35%, rgba(7, 7, 7, 0.72) 101.95%);
+    --info: linear-gradient(91deg, #0B2A2C 2.35%, rgba(7, 7, 7, 0.72) 101.95%);
+    --success: linear-gradient(91deg, #231D09 2.35%, rgba(7, 7, 7, 0.72) 101.95%);
+    --announcement: linear-gradient(91deg, #092312 2.35%, rgba(7, 7, 7, 0.72) 101.95%);
+
+    --warning-color: #EC811F;
+    --info-color: #1FE0EC;
+    --success-color: #ECBF1F;
+    --announcement-color: #1FEC65;
+
+    --font: 'Satoshi', sans-serif;
+}
+
+.notify-cont{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 2vw;
+    padding-top: 2vw;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.notify{
+    width: 18vw;
+    height: 7vw;
+    border-radius: 0.51163rem;
+    padding: 0.56vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 20vw;
+}
+
+.notify-inner{
+    background: rgba(0, 0, 0, 0.08);
+    width: 100%;
+    height: 100%;
+    border-radius: 0.509rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.3vw;
+}
+
+.notify-icon{
+    padding-left: 1vw;
+}
+
+.notify-icon svg{
+    width: 3vw;
+    height: 3vw;
+}
+
+.notify-text{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vw;
+}
+
+.notify-text h2{
+    font-family: var(--font);
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+
+.notify-text p{
+    font-family: var(--font);
+    font-size: 0.8vw;
+    font-weight: 400;
+    color: #C8C8C8;
+}
+
+.border-svg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.border-svg svg{
+    width: 0.7vw;
+    height: 0.7vw;
+}
+
+.left-svg{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.right-svg{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.bottom-left-svg{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.bottom-right-svg{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.notify.announcement{
+    background: var(--announcement);
+}
+
+.notify.warning{
+    background: var(--warning);
+}
+
+.notify.info{
+    background: var(--info);
+}
+
+.notify.success{
+    background: var(--success);
+}
+
+.notify.warning .border-svg svg path{
+    stroke: var(--warning-color);
+}
+
+.notify.info .border-svg svg path{
+    stroke: var(--info-color);
+}
+
+.notify.success .border-svg svg path{
+    stroke: var(--success-color);
+}
+
+.notify.announcement .border-svg svg path{
+    stroke: var(--announcement-color);
+}
+
+.notify.announcement .notify-text h2{
+    color: var(--announcement-color);
+}
+
+.notify.warning .notify-text h2{
+    color: var(--warning-color);
+}
+
+.notify.info .notify-text h2{
+    color: var(--info-color);
+}
+
+.notify.success .notify-text h2{
+    color: var(--success-color);
+}

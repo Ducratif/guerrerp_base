@@ -1,0 +1,45 @@
+{
+  "notifications": {
+    "invalid_rating": "Note par étoiles invalide.",
+    "business_not_found": "Entreprise introuvable.",
+    "coords_not_found": "Impossible de déterminer votre position.",
+    "too_far": "Vous êtes trop loin de l'entreprise pour laisser un avis.",
+    "review_submitted_success": "Votre avis pour '{businessName}' a été envoyé avec succès !",
+    "review_submitted_fail": "Échec de l'envoi de votre avis. Veuillez réessayer plus tard."
+  },
+  "context_menu": {
+    "open_reviews_title": "Avis",
+    "open_reviews_description": "Curieux de savoir ce que les autres pensent ? Consultez les impressions existantes ou partagez les vôtres.",
+    "reviews_header": "Avis pour {businessName}",
+    "reviews_title": "Que disent les gens de {businessName} ?",
+    "rating_placeholder_count": "Note moyenne : {rating}/5.0 ⭐️ — {count} avis",
+    "read_reviews_title": "Lire les avis",
+    "read_reviews_description": "Consultez les avis détaillés d'autres clients pour voir ce qu'ils ont aimé — ou pas.",
+    "read_reviews_notification": "Récupération de tous les avis disponibles...",
+    "write_review_title": "Écrire un avis",
+    "write_review_description": "Vous avez quelque chose à dire ? Laissez votre avis et une note ici !",
+    "write_review_notification": "Traitement de votre retour, veuillez patienter...",
+    "review_star_rating_label": "Note par étoiles",
+    "review_text_label": "Commentaire",
+    "review_text_placeholder": "Partagez jusqu'à 120 caractères (facultatif). Soyez bref !",
+    "review_anonymous_label": "Soumettre anonymement ?",
+    "review_submit_description": "Avis envoyé :\nEntreprise : %s\nÉtoiles : %s\nAnonyme : %s\nMessage : %s",
+    "review_no_comment": "(Aucun commentaire)",
+    "review_yes": "Oui",
+    "review_no": "Non",
+    "no_rating_yet": "Aucun avis pour le moment — aucune note disponible !",
+    "no_reviews_found_title": "Aucun avis trouvé",
+    "no_reviews_found_description": "On dirait que personne n’a encore partagé son avis. Soyez le premier !",
+    "return_main_menu_title": "Retour au menu principal",
+    "return_main_menu_description": "Revenir au menu principal des avis pour voir d'autres options.",
+    "already_submitted_review_title": "Avis déjà soumis",
+    "already_submitted_review_description": "Vous avez déjà laissé un avis pour cette entreprise. Vous ne pouvez pas en soumettre un autre pour le moment.",
+    "previous_page_title": "Page précédente",
+    "previous_page_description": "Aller à la page précédente des avis.",
+    "next_page_title": "Page suivante",
+    "next_page_description": "Aller à la page suivante des avis."
+  },
+  "target": {
+    "open_reviews_title": "Ouvrir les avis"
+  }
+}

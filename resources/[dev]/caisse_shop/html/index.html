@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Lootbox Shop - GuerreRP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Page Boutique Joueur -->
+    <div id="container">
+        <div id="header">
+            <h1>🎁 Boutique de Caisses - GuerreRP</h1>
+            <button onclick="fetchAllBoxes()">🔄 Actualiser les caisses</button>
+            <button onclick="openSaisonPasse()" class="button">🎖️ Saison Passe</button>
+            <button id="rewardBtn">🎁 Mes Récompenses</button>
+            <button onclick="openHistory()">📜 Historique</button>
+            <button id="closeBtn">Fermer</button>
+        </div>
+
+        <div id="box-filters">
+            <select id="categoryFilter" onchange="filterBoxes()">
+                <option value="all">Toutes les catégories</option>
+            </select>
+            <select id="sortFilter" onchange="filterBoxes()">
+                <option value="default">Tri par défaut</option>
+                <option value="name">Nom (A-Z)</option>
+                <option value="price">Prix argent (croissant)</option>
+            </select>
+        </div>
+
+        <div id="box-list"></div>
+
+        <div id="box-detail" class="hidden">
+            <div class="box-detail-content">
+                <h2 id="detail-name"></h2>
+                <p id="detail-description"></p>
+                <ul id="detail-items"></ul>
+                <div id="detail-payments"></div>
+                <button id="buyBtn">Acheter cette caisse</button>
+                <button id="backBtn">Retour</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Récompenses -->
+     <style>
+.reward-page {
+    color: white;
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.reward-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.reward-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.reward-card {
+    background-color: #1e1f25;
+    border-radius: 10px;
+    padding: 16px;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.reward-card h3 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.reward-card p {
+    font-size: 15px;
+    color: #ccc;
+}
+
+.no-reward-msg {
+    font-size: 16px;
+    color: #888;
+}
+
+#refreshRewards {
+    background-color: #ffa502;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#refreshRewards:hover {
+    background-color: #e69502;
+}
+</style>
+
+    <div id="reward-page" class="reward-page hidden">
+    <div class="reward-header">
+        <h2>🎁 Récompenses non récupérées</h2>
+        <!--<button id="refreshRewards">🔄 Actualiser</button>-->
+        <button onclick="fetchAllBoxes()">🔄 Actualiser les caisses</button>
+    </div>
+    <div id="reward-list" class="reward-list">
+        <p class="no-reward-msg">Tu n’as aucune récompense non réclamée.</p>
+    </div>
+    <button id="rewardBackBtn">⬅️ Retour</button>
+</div>
+
+<!-- Page Historique -->
+<div id="history-page" class="reward-page hidden">
+    <div class="reward-header">
+        <h2>📜 Historique des Achats de Caisses</h2>
+        <div>
+            <button onclick="openSaisonPasse()" class="button">🎖️ Saison Passe</button>
+            <button id="toggle-own-history" onclick="toggleOwnHistory()">👤 Voir mon historique</button>
+            <button onclick="fetchHistory()">🔄 Actualiser</button>
+            <button onclick="fetchTopBuyers()">🏆 Top Acheteurs</button>
+            <button onclick="historyBack()">⬅️ Retour</button>
+        </div>
+    </div>
+
+    <input type="text" id="history-search" placeholder="🔎 Recherche par prénom / caisse / date..." oninput="filterHistory()" style="width: 100%; margin-bottom: 20px; padding: 10px; font-size: 16px; border-radius: 6px; border: none; background-color: #1e1f25; color: white;">
+
+    <div id="history-list" class="reward-list">
+        <p class="no-reward-msg">Aucun historique pour l’instant.</p>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+        <button onclick="changeHistoryPage(-1)">⬅️ Page précédente</button>
+        <button onclick="changeHistoryPage(1)">Page suivante ➡️</button>
+    </div>
+</div>
+
+<!--SAISON PASSEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE-->
+<div id="saisonpasse-page" class="page" style="display:none;">
+  <div class="header">
+    <h2 id="saisonpasse-title">🎖️ Saison Passe</h2>
+    <button class="top-right" onclick="closeSaisonPasse()">⬅ Retour</button>
+  </div>
+  <div id="saisonpasse-info"></div>
+  <div id="saisonpasse-rewards" class="reward-row"></div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+    "job_centre": "Parler avec la conseillère",
+    "job_offers": "Offres d'emplois",
+    "licenses": "Acheter vos papiers",
+    "talking_job": "Parle avec ...",
+    "hired": "Vous avez été embauché(e).",
+    "unemployed": "Vous avez perdu votre emploi.",
+    "price": "Prix : %s$",
+    "talking_license": "Achat de licence...",
+    "license_success": "Licence achetée avec succès.",
+    "permission_denied": "Vous n'êtes pas autorisé(e) à acheter cette licence.",
+    "not_enough_money": "Vous n'avez pas assez d'argent.",
+    "name": "Nom",
+    "dateofbirth": "Date de naissance"
+    }

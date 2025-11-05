@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SInteriorOrderData>
+  <startFrom value="3000" />
+  <proxies>
+	<Item>secret_ymap</Item>
+	<Item>lr_cs4_03_strm_1.ymap</Item>
+	<Item>cs4_occl_00.ymap</Item>
+	<Item>bar.ymap</Item>
+  </proxies>
+</SInteriorOrderData>

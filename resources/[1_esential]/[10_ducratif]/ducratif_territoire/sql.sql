@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS `territories` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `x` FLOAT NOT NULL,
+    `y` FLOAT NOT NULL,
+    `z` FLOAT NOT NULL,
+    `radius` INT NOT NULL DEFAULT 50,
+    `color` INT NOT NULL DEFAULT 1,
+    `job` VARCHAR(50) NOT NULL
+);

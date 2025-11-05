@@ -1,0 +1,368 @@
+.color-0{color: #ffffff;}
+.color-1{color: #ff4444;}
+.color-2{color: #99cc00;}
+.color-3{color: #ffbb33;}
+.color-4{color: #0099cc;}
+.color-5{color: #33b5e5;}
+.color-6{color: #aa66cc;}
+.color-8{color: #cc0000;}
+.color-9{color: #cc0068;}
+
+* {
+  font-family: "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji",  Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+.no-grow {
+  flex-grow: 0;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+em {
+  font-style: normal;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+#app {
+  font-family: "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji",  Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+.chat-window {
+  position: absolute;
+  top: 1.5%;
+  left: 0.8%;
+  width: 38%;
+  height: 30%;
+  max-width: 1000px;
+  background-color: rgba(52, 73, 94, 0.0);
+  -webkit-animation-duration: 11s;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+.chat-messages {
+  position: relative;
+  height: 120%;
+  font-size: 1.5vh;
+  margin: 0.5%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+
+.chat-input {
+  font-size: 1.44vh;
+  position: absolute;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+  top: 30.0%;
+  left: 0.8%;
+  
+  width: 38%;
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+.prefix {
+  font-size: 1.44vh;
+  position: absolute;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+  margin-top: 1.0%;
+  left: 0.308%;
+}
+
+textarea {
+  font-size: 1.44vh;
+  display: block;
+  box-sizing: border-box;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+  height: 18.5px;
+  border: 1px solid #000;
+  padding: 18.5px;
+  padding-left: 2.5vh;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.69);
+  width: 68%;
+  border-color: transparent;
+  border-width: 0%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: slide-in-blurred-tl 2.8s cubic-bezier(0.250, 1.000, 0.320, 1.000) both;
+}
+
+
+textarea:focus,
+input:focus {
+  outline: none;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+.msg {
+  margin-bottom: 0.28%;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+.suggestions {
+  list-style-type: none;
+  padding: 0.5%;
+  padding-left: 2.5vh;
+  font-size: 1.44vh;
+  box-sizing: border-box;
+  color: white;
+  background-color: #000;
+  border-color: #000;
+  border-width: 1%;
+  width: 68%;
+  animation: slide-in-blurred-tl 1.0s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+
+.empty-suggestions {
+  position: relative;
+  border-radius: 0.5vw;
+  color: rgba(255, 255, 255, 0.50);
+  font-weight: 400;
+  padding: 1vh 2vh; 
+  display: flex; 
+  align-items: center; 
+}
+
+.suggestion-slash {
+  position: absolute;
+  top: 50%;
+  left: 10px; 
+  transform: translateY(-50%);
+  font-size: 1.5vh;
+  font-weight: 400;
+  color: #b3b3b3;
+  padding: 0.8vh 0.6vh;
+  border-radius: 100%;
+  transition: color 0.24s ease-in-out;
+  font-family: 'Salsa', cursive;
+  line-height: normal;
+}
+
+.help {
+  color: #ffffff;
+  color: #ffffff;
+  text-shadow: 1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000, -1px 0 1px #000;
+}
+
+.disabled {
+  margin-top: -10px;
+  color: #b0bbbd;
+}
+
+.suggestion {
+  background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(125, 125, 125, 0.9) 100%);
+  border-radius: 1vh;
+  padding: 0.5vh 1.5vh;
+  margin: 0.4vh 0;
+  color: #ffffff;
+  font-size: 1.5vh;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px black;
+  transition: all 0.3s ease-in-out;
+}
+
+.suggestion.selected {
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1vh 2vh;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.suggestion:hover {
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.suggestion > * {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.chat-message {
+  margin: 0.5vw 0.8vw;
+  background: linear-gradient(135deg, rgba(19, 72, 85, 0.75), rgba(43, 44, 48, 0.85));
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  width: 23vw;
+  word-break: break-word;
+  border-radius: 1.2vh;
+  padding: 1.5vh 2vh;
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.chat-message:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.chat-message .header {
+  margin-bottom: 0.6vh;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.chat-message2 {
+  position: relative;
+  background-color: transparent;
+  margin: -12px 0;
+  animation: unfold 300ms ease;
+}
+
+@keyframes unfold {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.label-msg {
+  background-color: rgba(37, 37, 37, 0.85);
+  border-left: 5px solid #b93400;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 1vh 1.5vh;
+  margin-bottom: 1vh;
+}
+
+.label-msg b {
+  margin-right: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.label-msg-type {
+  padding: 0.4vh 1vh;
+  background: linear-gradient(45deg, rgba(19, 72, 85, 0.75), rgba(43, 44, 48, 0.85));
+  font-size: 1.2vh;
+  border-radius: 1.5vh;
+  border: 1px solid rgba(110, 110, 119, 0.8);
+  color: #fff;
+  text-shadow: 0 0 5px black;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.label-msg-type:hover {
+  background: linear-gradient(45deg, rgba(80, 130, 150, 0.9), rgba(43, 44, 48, 0.85));
+}
+
+.chat-message-body {
+  margin-top: 12px;
+  color: #f0f0f0;
+  font-size: 1.2vh;
+}
+
+.advert {
+  background: linear-gradient(90deg, rgba(47, 92, 115, 0.85) 0%, rgba(31, 67, 85, 0.85) 100%);
+  border-radius: 1.5vh;
+  padding: 1.5vh 2vh;
+  font-size: 1.6vh;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.warning .label-msg, .warning .label-msg-type {
+  background: linear-gradient(90deg, rgba(255, 230, 0, 0.85) 0%, rgba(190, 170, 0, 0.85) 100%);
+  color: #222;
+  border-radius: 12px;
+  font-weight: bold;
+  padding: 1.2vh 1.8vh;
+}
+
+.normal .label-msg, .normal .label-msg-type {
+  background: linear-gradient(90deg, rgba(47, 114, 181, 0.9) 0%, rgba(30, 80, 140, 0.9) 100%);
+  border-radius: 12px;
+  padding: 1.2vh 1.8vh;
+  font-weight: 500;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.error .label-msg, .error .label-msg-type {
+  background: linear-gradient(90deg, rgba(191, 36, 36, 0.9) 0%, rgba(140, 20, 20, 0.9) 100%);
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 1.2vh 1.8vh;
+}
+
+.system .label-msg, .system .label-msg-type {
+  background: linear-gradient(90deg, rgb(80, 70, 150) 0%, rgb(50, 40, 120) 100%);
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 1.2vh 1.8vh;
+  color: white;
+}
+
+.emergency .label-msg, .emergency .label-msg-type {
+  background: linear-gradient(90deg, rgba(224, 50, 50, 0.9) 0%, rgba(180, 30, 30, 0.9) 100%);
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 1.2vh 1.8vh;
+}
+
+.nonemergency .label-msg, .nonemergency .label-msg-type {
+  background: linear-gradient(90deg, rgba(112, 25, 25, 0.9) 0%, rgba(80, 15, 15, 0.9) 100%);
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 1.2vh 1.8vh;
+}
+
+.report .label-msg, .report .label-msg-type {
+  background: linear-gradient(90deg, rgba(86, 173, 10, 0.9) 0%, rgba(50, 120, 5, 0.9) 100%);
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 1.2vh 1.8vh;
+}
+
+.chat-input > div {
+  position: relative;
+  width: 100%;
+}
+
+.chat-input i {
+  font-size: 1.5vh;
+  position: absolute;
+  top: 50%;
+  left: 92%;
+  color: rgba(255, 255, 255, 0.822);
+  transform: translate(-100%, -50%);
+}
+
+.ooc {
+  background: linear-gradient(90deg, rgba(50, 50, 50, 0.95) 0%, rgba(100, 100, 100, 0.95) 100%);
+  border-radius: 12px;
+  padding: 1.5vh 2vh;
+  font-size: 1.5vh;
+  color: white;
+  font-weight: 600;
+}
+
+.fa-door-open {
+  color: rgba(42, 42, 42, 0.9);
+  background-color: #7d7d7d;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.fa-door-open:hover {
+  background-color: #5a5a5a;
+  cursor: pointer;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}

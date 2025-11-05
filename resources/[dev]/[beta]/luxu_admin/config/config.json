@@ -1,0 +1,187 @@
+{
+  "install_sql_automatically": true,
+  "allow_second_fivem_instance": true,
+  "owners": ["license2:cf872e2dbff1cf3152fff72b147ca07238315148"],
+  "hierarchy_protection": true,
+  "default_duty": true,
+  "default_dark_mode": true,
+  "branding": {
+    "name": "GuerreRP",
+    "logo": "./server_logo.png",
+    "link": "https://guerrerp.ovh"
+  },
+  "cdn": {
+    "service": "fivemanage"
+  },
+  "safezones": {
+    "enabled": false,
+    "_comment_": "Cette fonctionnalité n'est pas encore implémentée."
+  },
+  "locales": {
+    "lang": "fr",
+    "code": "fr-FR"
+  },
+  "inventory": {
+    "auto_detect": true,
+    "name": "ox-inventory",
+    "images_url": "https://cfx-nui-ox-inventory/html/images/%s.png",
+    "_comment_": "Si auto_detect est défini sur « true », l'inventaire sera détecté automatiquement. Si la valeur est « false », vous devez spécifier le nom de la ressource d'inventaire.."
+  },
+  "vehicles": {
+    "use_ox_lib_for_mods": false,
+    "images_url": "https://docs.fivem.net/vehicles/%s.webp"
+  },
+  "reports": {
+    "enabled": true
+  },
+  "external_chat": {
+    "enabled": true
+  },
+  "custom_map": {
+    "enabled": false,
+    "_comment_": "Activer ou désactiver ici",
+    "type": {
+      "active": "image",
+      "_comment_": "définir comme actif une mosaïque ou une image",
+      "tile": {
+        "url": "https://map_locations.com/{z}/{x}/{y}.webp",
+        "options": {
+          "minZoom": 0,
+          "maxNativeZoom": 5,
+          "noWrap": true,
+          "id": "Ma carte personnalisé"
+        }
+      },
+      "image": {
+        "url": "https://imagedelivery.net/xMNIukUvBnTcljSQ6wCsQg/d69bfcd1-773e-489a-201e-6ec358ec6500/MAPS",
+        "options": {
+          "bounds": [
+            [-4000, -5500],
+            [8000, 6000]
+          ]
+        }
+      }
+    },
+    "options": {
+      "minZoom": 2,
+      "maxZoom": 8,
+      "zoom": 2,
+      "center": [0, 0],
+      "maxBounds": [
+        [-4000, -5500],
+        [8000, 6000]
+      ]
+    },
+    "color": "rgb(15,168,210)"
+  },
+  "warnings": {
+    "maximum_warnings_until_ban": 3,
+    "message_duration_seconds": 15,
+    "ban_duration_days": 1,
+    "ban_message": "Avertissements maximums atteints!"
+  },
+  "commands": {
+    "open_panel": {
+      "enabled": true,
+      "name": "admin",
+      "label": "Ouvrir le menu d'administration de Ducratif",
+      "description": "Ouvrir le menu d'administration principal",
+      "keybind": true,
+      "defaultKey": false
+    },
+    "open_menu": {
+      "enabled": true,
+      "name": "GuerreRP",
+      "description": "Ouvrir le menu rapide",
+      "keybind": true,
+      "defaultKey": false
+    },
+    "teleport_marker": {
+      "enabled": true,
+      "name": "tpm",
+      "description": "Téléportation vers un marqueur",
+      "keybind": true,
+      "defaultKey": false
+    },
+    "teleport_go_back": {
+      "enabled": true,
+      "name": "back",
+      "description": "Retour à votre dernière position",
+      "keybind": true,
+      "defaultKey": false,
+      "params": [
+        {
+          "name": "player",
+          "help": "Player ID (optional)",
+          "type": "nombre"
+        }
+      ]
+    },
+    "teleport_player": {
+      "enabled": true,
+      "name": "tp",
+      "description": "Téléporter vers un joueur",
+      "keybind": true,
+      "defaultKey": false
+    },
+    "player_report": {
+      "enabled": true,
+      "name": "report",
+      "description": "Ouvre le menu du rapport (All players)",
+      "keybind": true,
+      "defaultKey": false
+    },
+    "noclip": {
+      "enabled": true,
+      "name": "noclip",
+      "description": "Activer/désactiver Noclip",
+      "keybind": true,
+      "defaultKey": false
+    },
+    "spectate": {
+      "enabled": true,
+      "name": "spectate",
+      "description": "Observer un joueur"
+    }
+  },
+
+  "logs": {
+    "_comment_": "Ajustez selon vos besoins.",
+    "enabled": true,
+    "max_age_days": 30,
+
+    "options": {
+      "chat_messages": false,
+      "player_deaths": true,
+      "_comment_": "Les journaux des messages de chat peuvent faire planter votre serveur."
+    }
+  },
+
+  "chats": {
+    "character_limit": 500
+  },
+  "loop_delays": {
+    "coords_update": 10000
+  },
+  "optimization": {
+    "_comment_": "Ajustez ces paramètres en fonction des performances de votre serveur",
+    "items_db_include_offline_players": false
+  },
+  "force_resource_shutdowns": ["_resource_name_"],
+  "delete_character_aditional_queries": {
+    "esx": ["DELETE FROM owned_vehicles WHERE owner = ?"],
+    "qb": ["DELETE FROM player_vehicles WHERE citizenid = ?"],
+    "comment": "Les requêtes spécifiées ici seront exécutées lors de la suppression d'un caractère. Elles fourniront toujours un seul argument : l'identifiant du caractère (ESX=identifiant | QB/QBOX = citizenid)."
+  },
+  "esx_boss_grades_names": ["owner"],
+  "announcements": {
+    "messages": {
+      "position": {
+        "left": "0%",
+        "top": "0%",
+        "margin": "1.5rem"
+      }
+    }
+  },
+  "brandoff": false
+}

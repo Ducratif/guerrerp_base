@@ -1,0 +1,15 @@
+{
+    "job_centre": "Speak with the counselor",
+    "job_offers": "Job offers",
+    "licenses": "Purchase your papers",
+    "talking_job": "Talk with ...",
+    "hired": "You have been hired.",
+    "unemployed": "You have lost your job.",
+    "price": "Price: %s$",
+    "talking_license": "License purchase...",
+    "license_success": "License purchased successfully.",
+    "permission_denied": "You are not authorized to purchase this license.",
+    "not_enough_money": "You do not have enough money.",
+    "name": "Name",
+    "dateofbirth": "Date of birth"
+    }

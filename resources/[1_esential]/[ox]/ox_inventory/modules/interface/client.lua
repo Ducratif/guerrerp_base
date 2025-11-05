@@ -1,0 +1,36 @@
+﻿--[[
+  GuerreRP - Base publique
+  Développé et maintenu par Ducratif
+
+  Discord : https://discord.gg/kpD8pQBBWm
+  Documentation : https://github.com/Ducratif/guerrerp
+
+  Merci de ne pas retirer ce crédit si vous utilisez ou modifiez cette ressource.
+]]
+if not lib then return end
+
+-- Module is deprecated and provided for compatibility
+-- All functions are now part of with ox_lib
+
+exports('Keyboard', lib.inputDialog)
+
+exports('Progress', function(options, completed)
+	local success = lib.progressBar(options)
+
+	if completed then
+		completed(not success)
+	end
+end)
+
+exports('CancelProgress', lib.cancelProgress)
+exports('ProgressActive', lib.progressActive)
+
+--[[
+  GuerreRP - Base publique
+  Développé et maintenu par Ducratif
+
+  Discord : https://discord.gg/kpD8pQBBWm
+  Documentation : https://github.com/Ducratif/guerrerp
+
+  Merci de ne pas retirer ce crédit si vous utilisez ou modifiez cette ressource.
+]]

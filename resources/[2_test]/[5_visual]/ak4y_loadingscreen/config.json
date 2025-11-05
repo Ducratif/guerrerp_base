@@ -1,0 +1,70 @@
+{
+    "Keys": [
+		{
+			"key": "F1",
+			"title": "Téléphone",
+			"description": "Utiliser le téléphone"
+		},
+		{
+			"key": "F2",
+			"title": "Inventaire",
+			"description": "Voir et intéragire avec l'inventaire"
+		},
+		{
+			"key": "TABE",
+			"title": "Inventaire Rapide",
+			"description": "Voir l'inventaire rapide"
+		},
+		{
+			"key": "1/2/3/4",
+			"title": "Utilisation Rapide",
+			"description": "Utiliser l'objet rapidement"
+		},
+		{
+			"key": "P",
+			"title": "Carte Rapide",
+			"description": "Voir la carte rapidement"
+		},
+		{
+			"key": "/chat",
+			"title": "Menu HUD/Vehicule/Mode Streamer",
+			"description": "/hudsettings dans le chat"
+		}
+	],
+
+    "News": [
+		{
+			"title": "Ouverture de GuerreRP",
+			"subtitle": "Information développement",
+			"description": "Nous somme ravis de pouvoir enfin vous présenter GuerreRP. Vous pouvez rencontrer des bugs lors de votre session, merci de nous en faire part au plus vite. Si vous avez des suggestions hésiter pas à nous contacter.",
+			"image": "new.png"
+		}
+	],
+
+	"Authors": [
+		{
+			"name": "Ducratif",
+			"rank": "Fondateur",
+			"image": "user.png" 
+		},
+        {
+			"name": "420",
+			"rank": "Co-Fondateur",
+			"image": "420.png" 
+		}
+        ,
+        {
+			"name": "Polynesia",
+			"rank": "Co-Fondateur",
+            "image": "poly.png"
+		}
+	],
+
+    "Music": [
+        {
+            "songname": "GuerreRP - Terrain Miné",
+            "owner": "Ducratif",
+            "path": "music/GuerreRP_Terrain_Mine_Officiel.mp3" 
+        }
+    ]
+}

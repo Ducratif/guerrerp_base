@@ -1,0 +1,51 @@
+/*----------------------------*/
+/*---- BOII | DEVELOPMENT ----*/
+/*----------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* Container for the wire cut section */
+.wire_cut_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #333; /* Dark gray border for a rugged look */
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8), /* Dark shadow for depth */
+                inset 0px 0px 10px rgba(0, 0, 0, 0.6); /* Subtle inner shadow */
+    background-image: url('../../assets/images/circuit.png'); /* Circuit texture for detail */
+    background-size: cover;
+    background-position: center;
+    background-color: #1a1a1a; /* Dark background color */
+    user-select: none;
+    padding: 20px; /* Add padding for spacing */
+}
+
+/* Timer container styling */
+.wire_cut_timer_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* Increased height for better visibility */
+    width: 100%;
+    border-top: 5px solid #444; /* Slightly lighter gray border for distinction */
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 5rem; /* Increased font size for emphasis */
+    color: #ccc; /* Light gray text color */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.9); /* Strong text shadow for legibility */
+    background-image: url('../../assets/images/screen.png'); /* Screen texture for a panel look */
+    background-size: cover;
+    background-position: center;
+    background-color: #333; /* Dark background color */
+    user-select: none;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Canvas styling */
+#wire_cut_canvas {
+    display: block;
+    width: 100%; /* Ensure the canvas takes full width */
+    height: auto; /* Maintain aspect ratio */
+}
+

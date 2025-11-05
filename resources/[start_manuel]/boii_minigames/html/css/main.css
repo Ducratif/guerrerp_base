@@ -1,0 +1,63 @@
+/*----------------------------*/
+/*---- BOII | DEVELOPMENT ----*/
+/*----------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: none !important;
+}
+
+input:focus {
+    outline: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#main_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.volume_buttons, .power_btn, .front_cam {
+    display: none; /* Hide elements to keep the design minimalistic */
+}
+
+.tablet_container {
+    position: relative;
+    height: 80%;
+    width: 70%;
+    border-radius: 50px; /* Slightly rounded corners */
+    border: 80px solid #e0cfbb; /* Thicker green border */
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.5), /* Inner green glow */
+                0 0 30px rgba(0, 0, 0, 0.8), /* Outer shadow for depth */
+                0 0 100px rgba(0, 255, 0, 0.2); /* Subtle outer glow */
+}
+
+.tablet_screen {
+    position: relative;
+    height: 95%;
+    width: 97%;
+    margin: 0 10px;
+    border-radius: 5px; /* Slight curvature */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; /* Simple dark background */
+    color: #1dc91d;
+    text-shadow: 0 0 2px #11cc11;
+    font-size: 2vw;
+    box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.8); /* Inner screen glow */
+}

@@ -1,0 +1,15 @@
+
+{
+  "steam_api_key": "STEAM_API_KEY_DUCRATIF",
+  "fivemanage": {
+    "image": "API_IMAGE",
+    "video": "API_VIDEO",
+    "audio": "API_AUDIO"
+  },
+  "discord_bot": {
+    "enabled": false,
+    "client_id": "CLIEN_BOT",
+    "token": "TOKEN_BOT_DISCORD",
+    "guild_id": "SERVER_ID"
+  }
+}

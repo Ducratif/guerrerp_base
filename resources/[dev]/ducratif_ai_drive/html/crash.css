@@ -1,0 +1,102 @@
+/* ===== Overlay CHOC DÉTECTÉ ===== */
+/*html, body { background: transparent !important; }*/
+
+/* Ne rends le fond transparent QUE quand le panel n'est pas ouvert */
+body:not(.nui-dark) { background: transparent !important; }
+
+
+/* Caché par défaut */
+#crash-overlay {
+  display: none;                /* pas de !important, sinon JS ne peut pas l'ouvrir */
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;          /* au-dessus de tout */
+  align-items: center;
+  justify-content: center;
+
+  /* flou sans fond opaque */
+  backdrop-filter: blur(6px) saturate(1.05);
+  -webkit-backdrop-filter: blur(6px) saturate(1.05);
+
+  pointer-events: auto;
+}
+
+/* Affiché seulement quand JS ajoute .crash-show */
+#crash-overlay.crash-show {
+  display: flex;
+}
+
+/* Carte */
+.crash-wrap {
+  position: relative;
+  padding: 28px 36px 32px;
+  border-radius: 18px;
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(255,255,255,.04);
+  overflow: hidden;
+  transform: translateY(6px) scale(.98);
+  animation: crash-in .25s ease-out forwards;
+}
+
+/* Petit beacon qui pulse */
+.crash-beacon {
+  position: absolute; top: 12px; right: 12px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #00ffc8;
+  box-shadow: 0 0 12px #00ffc8;
+  animation: crash-beacon 1.4s ease-in-out infinite;
+}
+
+/* Titres */
+.crash-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: .4px;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(0,0,0,.4);
+  animation: crash-wiggle .9s ease-in-out infinite;
+}
+.crash-sub {
+  margin-top: 4px;
+  color: rgba(255,255,255,.8);
+}
+
+/* Compteur */
+.crash-count {
+  position: relative;
+  width: 140px; height: 140px;
+  margin: 18px auto 10px;
+}
+.crash-ring { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring-bg   { fill: none; stroke: rgba(255,255,255,.08); stroke-width: 12; }
+.ring-fg   {
+  fill: none; stroke: #00ffc8; stroke-width: 12; stroke-linecap: round;
+  filter: drop-shadow(0 0 10px rgba(0,255,200,.25));
+  stroke-dasharray: 339.292 339.292; /* 2πr avec r = 54 */
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset .25s linear;
+}
+.crash-secs {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font-size: 42px; font-weight: 800; color: #fff;
+}
+
+.crash-note {
+  text-align: center;
+  color: rgba(255,255,255,.7);
+  font-size: 12px;
+  letter-spacing: .3px;
+}
+
+/* Animations */
+@keyframes crash-in { to { transform: translateY(0) scale(1); opacity: 1; } }
+@keyframes crash-beacon { 0%,100% { transform: scale(.9); opacity: .8; } 50% { transform: scale(1.15); opacity: 1; } }
+@keyframes crash-wiggle { 0%,100% { transform: translateX(0); } 50% { transform: translateX(1.5px); } }
+
+/* Accessibilité */
+#crash-overlay:focus { outline: none; }

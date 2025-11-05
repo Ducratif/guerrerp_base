@@ -1,0 +1,31 @@
+['fish'] = {
+    label = 'Petit poisson',
+    weight = 20,
+    stack = true,
+    close = false,
+    description = 'Petit poisson pecher en mer',
+},
+
+['fish1'] = {
+    label = 'Petit poisson gentil',
+    weight = 20,
+    stack = true,
+    close = false,
+    description = 'Petit poisson pecher en mer',
+},
+
+['fish2'] = {
+    label = 'Petit poisson délicieux',
+    weight = 20,
+    stack = true,
+    close = false,
+    description = 'Petit poisson pecher en mer',
+},
+
+['rond'] = {
+    label = 'Canne a peche',
+    weight = 70,
+    stack = true,
+    close = false,
+    description = 'Pratique pour pecher askip',
+},

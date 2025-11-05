@@ -1,0 +1,9 @@
+['carteidentite'] = {
+		label = 'Carte d\'identité',
+		weight = 80,
+	},
+
+	['drive'] = {
+		label = 'Permis de conduire',
+		weight = 80,
+	},

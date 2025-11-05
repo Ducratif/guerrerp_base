@@ -1,0 +1,42 @@
+﻿--[[
+  GuerreRP - Base publique
+  Développé et maintenu par Ducratif
+
+  Discord : https://discord.gg/kpD8pQBBWm
+  Documentation : https://github.com/Ducratif/guerrerp
+
+  Merci de ne pas retirer ce crédit si vous utilisez ou modifiez cette ressource.
+]]
+Locales['en'] = {
+  ['valid_this_purchase'] = 'validate this purchase?',
+  ['yes'] = 'yes (<span style="color: green;">$%s</span>)',
+  ['yes2'] = 'yes',
+  ['no'] = 'no',
+  ['not_enough_money'] = 'you do not have enough money',
+  ['press_menu'] = 'press ~INPUT_CONTEXT~ to access the ~y~Clothing Shop~s~.',
+  ['clothes'] = 'clothing Shop',
+  ['you_paid'] = 'you paid ~g~$%s~s~',
+  ['save_in_dressing'] = 'do you want to save the outfit in your property?',
+  ['name_outfit'] = 'name your outfit',
+  ['saved_outfit'] = 'the outfit has been saved!',
+  ['outfit_menu'] = 'what you want to do?',
+  ['outfit'] = 'manage outfits',
+  ['buy'] = 'buy new clothes',
+  ['no_outfit'] = 'no outfit stored',
+  ['saved_outfits'] = 'stored outfits',
+  ['change_clothe'] = "dress outfit",
+  ['del_clothe'] = "delete outfit",
+  ['choose_clothe'] = 'which outfit you wanna use',
+  ['which_delete'] = 'which outfit you wanna delete?',
+  ['clothe_delete'] = 'outfit deleted',
+}
+
+--[[
+  GuerreRP - Base publique
+  Développé et maintenu par Ducratif
+
+  Discord : https://discord.gg/kpD8pQBBWm
+  Documentation : https://github.com/Ducratif/guerrerp
+
+  Merci de ne pas retirer ce crédit si vous utilisez ou modifiez cette ressource.
+]]

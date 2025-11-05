@@ -1,0 +1,68 @@
+# Hydroplaning Script for FiveM
+
+SGN https://discord.gg/NRNnvSux6e
+
+## Description
+This script adds a realistic hydroplaning effect to vehicles in FiveM. When driving at high speeds during specific weather conditions, vehicles (both players and AI) may lose grip temporarily, simulating hydroplaning. The script is fully configurable.
+
+---
+
+## Features
+- Hydroplaning effect based on speed and weather conditions.
+- Affects both player and AI vehicles.
+- Configurable speed threshold, grip loss duration, and weather conditions.
+
+---
+
+## Configuration
+You can configure the script by modifying the `Config` table in `client.lua`:
+
+- **SpeedThreshold**: Speed (in MPH) at which hydroplaning can occur.
+- **GripLossDuration**: Duration (in milliseconds) for which grip is lost.
+- **WeatherConditions**: List of weather types that trigger hydroplaning. Default conditions:
+  - `RAIN`
+  - `THUNDER`
+
+---
+
+## Installation
+1. Download the script and place it in your server's `resources` folder. Use a folder name like `sgn-hydroplaning`.
+2. Ensure the folder structure looks like this:
+    ```plaintext
+    resources/
+    └── sgn-hydroplaning/
+        ├── fxmanifest.lua
+        ├── client.lua
+    ```
+3. Add the script to your `server.cfg` file:
+    ```plaintext
+    ensure sgn-hydroplaning
+    ```
+4. Restart your server or run the following commands in the server console:
+    ```plaintext
+    refresh
+    start sgn-hydroplaning
+    ```
+
+---
+
+## How It Works
+1. The script constantly checks the player's speed and weather conditions.
+2. If the speed exceeds the threshold and the weather matches a condition in `WeatherConditions`, the vehicle loses grip for the specified duration.
+3. AI vehicles are also affected by the same logic.
+
+---
+
+## Requirements
+- FiveM server (latest version recommended).
+
+---
+
+## Support
+If you encounter any issues or have suggestions, feel free to reach out to the script author: **SpaceDrout**.
+
+---
+
+## License
+This script is provided as-is without any warranty. Redistribution or modification is allowed as long as credit is given to the author.
+

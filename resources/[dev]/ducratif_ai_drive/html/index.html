@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GuerreRP • IA Drive • By Ducratif</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="crash.css" />
+  <script defer src="crash.js"></script>
+</head>
+<body>
+  <div id="app" class="hidden">
+    <div class="topbar">
+      <div class="brand" id="brand">GuerreRP • IA Drive • By Ducratif</div>
+      <div class="tabbar">
+        <button class="tab active" data-tab="panel">Conduite</button>
+        <button class="tab" data-tab="options">Options</button>
+        <button class="tab" data-tab="history">Historique</button>
+        <button class="tab" data-tab="favorites">Favoris</button>
+        <button class="tab" data-tab="npc">PNJ</button>
+      </div>
+      <button id="btn-close" class="close">×</button>
+    </div>
+
+    <div class="content">
+      <!-- Panel conduite -->
+      <section id="tab-panel" class="tab-content active">
+        <div class="mapfake">
+          <div class="glow"></div>
+          <div class="grid"></div>
+          <div class="hint">La destination utilisera votre point GPS via la carte. ATTENTION l'IA ne peux pas réagir sur un chose inévitable !</div>
+        </div>
+      
+        <div class="panel-actions">
+          <button id="btn-start" class="primary">Lancer l'IA vers mon GPS</button>
+        </div>
+      
+        <!-- === Updates / Changelog === -->
+        <div class="updates">
+          <div class="updates-header">
+            <div class="title">
+              <span class="spark"></span>
+              <h3>Mises à jour de l’IA</h3>
+              <span id="updates-badge" class="badge-dot hidden" title="Nouveautés non lues"></span>
+            </div>
+          
+            <div class="updates-controls">
+              <div class="chips">
+                <button class="chip active" data-filter="Tous">Tous</button>
+                <button class="chip" data-filter="Amélioration">Améliorations</button>
+                <button class="chip" data-filter="Correctif">Correctifs</button>
+                <button class="chip" data-filter="Nouveau">Nouveautés</button>
+              </div>
+              <button id="btn-mark-read" class="ghost">Tout marquer comme lu</button>
+            </div>
+          </div>
+        
+          <div id="updates-list" class="updates-list"><!-- rempli par JS --></div>
+        </div>
+      </section>
+
+
+      <!-- Options -->
+      <section id="tab-options" class="tab-content">
+        <div class="options-grid">
+          <div class="card">
+            <h3>Mode de conduite</h3>
+            <div class="row">
+              <label><input type="radio" name="drivemode" value="souple"> Souple</label>
+              <label><input type="radio" name="drivemode" value="rapide"> Rapide</label>
+              <label><input type="radio" name="drivemode" value="violente"> Violente</label>
+            </div>
+            <button class="buy" data-option="driving_mode">Acheter ce mode (350 000$)</button>
+          </div>
+
+          <div class="card">
+            <h3>Limitateur</h3>
+            <div class="row">
+              <label><input type="checkbox" id="limiter-enabled"> Activer</label>
+              <input id="limiter-speed" type="number" min="20" max="300" placeholder="Vitesse (km/h)"/>
+            </div>
+            <button class="buy" data-option="limiter">Acheter Limitateur (200 000$)</button>
+          </div>
+
+          <div class="card">
+            <h3>Régulateur</h3>
+            <div class="row">
+              <label><input type="checkbox" id="cruise-enabled"> Activer</label>
+              <input id="cruise-speed" type="number" min="20" max="300" placeholder="Vitesse (km/h)"/>
+            </div>
+            <button class="buy" data-option="cruise">Acheter Régulateur (250 000$)</button>
+          </div>
+
+          <div class="card">
+            <h3>Évitement de collisions</h3>
+            <p>Réduction des risques via freinage d'urgence.</p>
+            <button class="buy" data-option="collision_avoid">Acheter (350 000$)</button>
+          </div>
+
+          <div class="card">
+            <div class="row between">
+              <div>
+                <h3>Conduite hors code</h3>
+                <p class="muted">Permet à l’IA d’ignorer feux rouges, stops et règles de priorité.</p>
+              </div>
+              <button class="buy" data-option="lawless">Acheter (350 000$)</button>
+            </div>
+            <div class="row top-gap">
+              <label class="switch">
+                <input type="checkbox" id="lawless-enabled">
+                <span>Activer</span>
+              </label>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <h3>Slots Favoris</h3>
+            <p>Augmente la capacité de favoris (+1) — max 30.</p>
+            <button class="buy" data-option="fav_slot">Acheter (+1) (20 000$)</button>
+          </div>
+
+          <div class="card">
+            <h3>Enregistrer</h3>
+            <button id="btn-save" class="secondary">Sauvegarder options</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Historique -->
+      <section id="tab-history" class="tab-content">
+        <div class="list" id="history-list"></div>
+      </section>
+
+      <!-- Favoris -->
+      <section id="tab-favorites" class="tab-content">
+        <div id="fav-meta"></div>
+        <div class="list" id="fav-list"></div>
+      </section>
+
+      <!-- PNJ page -->
+      <section id="tab-npc" class="tab-content">
+        <div class="npc-box">
+          <h2>Activation IA pour le véhicule</h2>
+          <div id="npc-state"></div>
+          <div class="npc-actions">
+            <button id="npc-enable" class="primary">Activer IA (1 000 000$)</button>
+            <button id="npc-disable" class="danger">Désactiver IA (200 000$)</button>
+          </div>
+          <div class="note">Après activation, un <b>calibrage</b> sera nécessaire.</div>
+        </div>
+      </section>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+    <div id="big-anim" class="big-anim hidden">
+      <div class="pulse"></div>
+      <div class="txt">IA • ENGAGE</div>
+    </div>
+  </div>
+
+
+
+<!-- Overlay CHOC DÉTECTÉ -->
+<div id="crash-overlay" aria-hidden="true" tabindex="-1">
+  <div class="crash-wrap">
+    <div class="crash-beacon"></div>
+
+    <div class="crash-title">CHOC DÉTECTÉ !</div>
+    <div class="crash-sub">L'IA S'ARRÊTE</div>
+
+    <div class="crash-count">
+      <svg class="crash-ring" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="54" class="ring-bg"></circle>
+        <circle cx="60" cy="60" r="54" class="ring-fg" id="crash-ring"></circle>
+      </svg>
+      <div class="crash-secs" id="crash-secs">10</div>
+    </div>
+
+    <div class="crash-note">Veuillez patienter…</div>
+  </div>
+</div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

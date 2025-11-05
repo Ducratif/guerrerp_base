@@ -1,0 +1,22 @@
+Add this to ox_inventory:
+
+['sponge'] = {
+    label = 'Cleaning Sponge',
+    weight = 100,
+    stack = false,
+    close = true,
+    description = 'A sponge for cleaning vehicles',
+    client = {
+        event = 'sponge:use'
+    }
+}
+
+Insert sponge.png in resources/ox_inventory/web/images/sponge.png
+
+CHANGELOG:
+
+1.0.0
+-RELEASE
+
+1.0.1
+- Added prop in hand while doing animation

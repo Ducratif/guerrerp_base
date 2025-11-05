@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ducratif_ai_drive • Documentation</title>
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;background:#0b0f14;color:#d9f1ff;margin:0}
+    header{padding:24px 18px;background:linear-gradient(90deg,#061018,#13222d);border-bottom:1px solid #1a3242}
+    h1{margin:0;font-size:22px}
+    main{padding:18px;max-width:1000px;margin:0 auto}
+    h2{margin-top:22px}
+    code,pre{background:#08131a;border:1px solid #16303f;color:#cfefff;padding:.2em .4em;border-radius:6px}
+    .card{background:#0c1620;border:1px solid #1a3242;padding:14px;border-radius:12px;margin:10px 0}
+    ul{line-height:1.6}
+    .muted{color:#9ad7ff}
+  </style>
+</head>
+<body>
+  <header><h1>ducratif_ai_drive • Documentation</h1></header>
+  <main>
+    <div class="card">
+      <p>Conduite autonome IA pour ESX Legacy + ox_lib/ox_target/ox_inventory/oxmysql.</p>
+      <p class="muted">Version 1.0.0 — <span id="date"></span></p>
+    </div>
+
+    <h2>Installation</h2>
+    <ol>
+      <li>Copiez le dossier dans <code>resources/</code> et assurez-vous que le nom du dossier est <code>ducratif_ai_drive</code>.</li>
+      <li>Importez <code>sql/schema.sql</code> et <code>sql/items.sql</code> dans votre base MySQL.</li>
+      <li>Activez la ressource dans <code>server.cfg</code>.</li>
+      <li>Modifiez <code>config.lua</code> selon vos besoins.</li>
+    </ol>
+
+    <h2>Ajouter les ITEMS | ox_inventory</h2>
+    <ol>
+      <li>Aller dans le dossier <code>ox_inventory/data/items.lua</code></li>
+      <li>Importez <code>Le contenu du fichier item.lua dans le dossier docs/item.lua</code></li>
+      <li>Pour les images, aller dans <code>ox_inventory/web/images/</code></li>
+      <li>Puis modifier le nom des images, par celui de chacun des items:<br>
+<code>chip1.png → renomme en module_ia.png</code>
+<br>
+<code>chip2.png → renomme en module_ia_premium.png</code>
+<br>
+<code>chip3.png → renomme en module_ia_platinum.png</code>
+      </li>
+    </ol>
+
+    <h2>Fonctionnement</h2>
+    <ul>
+      <li><b>PNJ IA :</b> interaction via ox_target, vérifie la propriété du véhicule à ≤ 25m.</li>
+      <li><b>Activation IA :</b> achat 1 000 000$, calibrage automatique (3 points générés).</li>
+      <li><b>Panel N (en voiture) :</b> destination via waypoint du jeu, options, historique, favoris.</li>
+      <li><b>Arrêt :</b> commande <code>/ia_stop</code> (ou demande police).</li>
+    </ul>
+
+    <h2>Options premium</h2>
+    <ul>
+      <li>Mode de conduite (souple/rapide/violente)</li>
+      <li>Limitateur de vitesse</li>
+      <li>Régulateur de vitesse</li>
+      <li>Évitement des collisions</li>
+      <li>Slots favoris supplémentaires</li>
+    </ul>
+
+    <h2>Entretien IA</h2>
+    <p>Durabilité configurable : <code>time</code> (minutes) ou <code>distance</code> (km). Items :</p>
+    <ul>
+      <li><b>Module IA :</b> +100% une option</li>
+      <li><b>Module IA Premium :</b> +50% toutes options</li>
+      <li><b>Module IA Platine :</b> +100% toutes options</li>
+    </ul>
+
+    <h2>API Natives clés</h2>
+    <ul>
+      <li><code>TaskVehicleDriveToCoordLongrange</code></li>
+      <li><code>SetEntityMaxSpeed</code></li>
+      <li><code>IsVehicleTyreBurst</code></li>
+      <li><code>IsVehicleSirenOn</code></li>
+      <li><code>HasEntityCollidedWithAnything</code></li>
+    </ul>
+
+    <h2>Personnalisation</h2>
+    <ul>
+      <li>PNJ : modèle/coordonnées dans <code>Config.NPC</code></li>
+      <li>Zones interdites : <code>Config.ForbiddenZones</code></li>
+      <li>Blacklist : <code>Config.BlacklistClasses/Models</code></li>
+      <li>Jobs police : <code>Config.PoliceJobs</code></li>
+      <li>Clés, prix, couleurs UI : <code>Config.*</code></li>
+    </ul>
+
+    <h2>Logs & Webhook</h2>
+    <p>Chaque action majeure est loggée en BDD <code>ai_logs</code> et envoie un embed si <code>Config.WebhookURL</code> est renseigné.</p>
+  </main>
+  <script>
+    document.getElementById('date').innerText = new Date().toLocaleString();
+  </script>
+</body>
+</html>

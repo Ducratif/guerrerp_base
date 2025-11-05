@@ -1,0 +1,21 @@
+-- MECANO
+	["repairkit"] = {
+		label = "Repair Kit",
+		weight = 3,
+		stack = true,
+		close = true,
+	},
+	
+	["chiffon"] = {
+		label = "Chiffons",
+		weight = 3,
+		stack = true,
+		close = true,
+	},
+	
+	["diag"] = {
+		label = "Valise de diagnostique",
+		weight = 3,
+		stack = true,
+		close = true,
+	},
