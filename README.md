@@ -1,7 +1,7 @@
 # GuerreRP – Base FiveM Publique (ESX Legacy)
 
 > **Auteur : _Ducratif_**  
-> **Documentation principale :** <https://github.com/Ducratif/guerrerp>  
+> **Documentation principale :** <https://github.com/Ducratif/guerrerp_base>  
 > **Discord support & retours :** <https://discord.gg/kpD8pQBBWm>
 
 ---
@@ -91,7 +91,7 @@ sets locale "fr-FR"
 1. **Cloner le dépôt :**
 
 ```bash
-git clone https://github.com/Ducratif/guerrerp.git
+git clone https://github.com/Ducratif/guerrerp_base.git
 ```
 
 2. **Copier la base sur ton serveur FXServer / txAdmin**
