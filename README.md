@@ -15,6 +15,76 @@
 
 ---
 
+## ⬇️ Téléchargement de la base GuerreRP
+
+> ⚠️⚠️ **IMPORTANT – NE PAS UTILISER “CODE → DOWNLOAD ZIP” SUR GITHUB** ⚠️⚠️  
+> Ce dépôt GitHub ne contient **PAS** l’intégralité de la base.  
+> Les fichiers présents ici servent surtout de **visuel global** et de **documentation** (scripts légers, structure, aperçu).  
+> Pour récupérer une base **jouable et complète**, utilisez **uniquement les liens de téléchargement ci-dessous**.
+
+---
+
+### 📁 1. Base principale “légère” (sans mappings ni véhicules)
+
+Cette version contient :
+
+- Tous les scripts essentiels, ESX, OX, systèmes, jobs, etc.
+- **Aucun mapping** et **aucun véhicule** pour garder un poids léger.
+- Idéal pour :
+  - comprendre la structure GuerreRP,
+  - démarrer un serveur et ajouter vos propres mappings/véhicules,
+  - faire des tests / dev.
+
+👉 **Téléchargement :**  
+**Base sans mappings & véhicules :**  
+<https://drive.google.com/drive/folders/1dPMY4ocJEvMO5sPrAI4BYtF6reJZcoHI?usp=drive_link>
+
+---
+
+### 🚗 2. Pack véhicules
+
+Ce dossier contient les **véhicules de la base GuerreRP**, organisés par catégories (police, EMS, mécano, armée, VIP, etc.).
+
+> ⚠️ Certains véhicules peuvent être **non debadge** (logos/marques réelles).  
+> Pour un usage public ou monétisé, pensez à :
+> - vérifier vos contraintes légales,
+> - remplacer les modèles sensibles par des versions debadgées / lore-friendly.
+
+👉 **Téléchargement :**  
+**Pack véhicules :**  
+<https://drive.google.com/drive/folders/1Z0k1z98X-GJrKpFUmkktxl_UBx6207B4?usp=sharing>
+
+---
+
+### 🗺️ 3. Pack mappings & véhicules supplémentaires
+
+Ce dossier contient :
+
+- Les **mappings** de la base (bases militaires, HQ, intérieurs, labs, etc.).
+- Certains **véhicules supplémentaires** liés à ces mappings ou à des usages spécifiques.
+
+Ces ressources complètent la base pour recréer l’environnement visuel et RP de **GuerreRP**.
+
+👉 **Téléchargement :**  
+**Mappings & véhicules supplémentaires :**  
+<https://drive.google.com/drive/folders/1m0j3W3MfX0doyN_-znewmHWl_zb8bPzV?usp=drive_link>
+
+---
+
+### 📌 Résumé important
+
+- ✅ **Pour tester, développer ou comprendre la structure** → Base légère (sans mappings ni véhicules).  
+- ✅ **Pour recréer l’expérience GuerreRP complète** → Base légère **+** pack véhicules **+** pack mappings.  
+- ⚠️ **ATTENTION:** → Si vous utilisez pas les mappings/Véhicules, retirer les ensures dans le fichier ressource.cfg
+- 🚫 **Ne téléchargez pas la base via le bouton GitHub “Download ZIP”** :  
+  vous n’aurez **pas tout** et certains scripts/mappings sont volontairement absents ou allégés ici.
+
+> Pour toute question, support ou retour :  
+> **Discord :** <https://discord.gg/kpD8pQBBWm>
+
+
+---
+
 ## ✨ Features principales
 
 - 🔹 **Framework : ESX Legacy** (avec toutes les dépendances de base)
