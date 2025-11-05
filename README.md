@@ -4,6 +4,11 @@
 > **Documentation principale :** <https://github.com/Ducratif/guerrerp_base>  
 > **Discord support & retours :** <https://discord.gg/kpD8pQBBWm>
 
+[![GitHub Release](https://img.shields.io/github/v/release/Ducratif/guerrerp_base)](https://github.com/Ducratif/guerrerp_base/releases)
+[![License](https://img.shields.io/badge/license-Custom-blue)](#-bonnes-pratiques--limites-dutilisation)
+[![ESX Legacy](https://img.shields.io/badge/framework-ESX_Legacy-green)](#)
+
+
 ---
 
 ![banner](https://dummyimage.com/1200x260/000000/ffffff&text=GuerreRP+Public+Base+by+Ducratif)
