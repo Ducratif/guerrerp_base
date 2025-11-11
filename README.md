@@ -90,6 +90,60 @@ Ces ressources complètent la base pour recréer l’environnement visuel et RP 
 
 ---
 
+## 🗄️ Importation du fichier SQL (Base de donnée)
+
+Ce projet est livré avec un fichier SQL contenant toute la structure + les données nécessaires.
+
+### 1️⃣ Création de la base de données
+
+1. Connectez-vous à votre **phpMyAdmin**.
+2. Cliquez sur **Nouvelle base de données**.
+3. Donnez un nom à la base, par exemple : `guerrerp`.
+4. Choisissez le jeu de caractères **utf8mb4_general_ci**.
+5. Validez la création.
+
+> 💡 Gardez précieusement le nom de la base (`guerrerp`) :  
+> il devra être renseigné dans votre configuration MySQL (server.cfg, .env, etc.).
+
+---
+
+### 2️⃣ Import du fichier `guerrerp.sql`
+
+1. Dans le menu de gauche, **cliquez sur la base** que vous venez de créer.
+2. Allez dans l’onglet **Importer**.
+3. Cliquez sur **Choisir un fichier** et sélectionnez le fichier :  
+   `guerrerp.sql`
+4. Laissez le format sur **SQL**.
+5. Cliquez sur **Exécuter** et attendez la fin du processus.
+
+Si tout se passe bien, phpMyAdmin affichera un message de succès et les tables apparaîtront dans le menu de gauche.
+
+---
+
+### 3️⃣ ⚠️ À propos des erreurs “Unexpected character”
+
+Si vous collez le contenu du fichier dans l’onglet **SQL** puis cliquez sur **Analyser**,  
+phpMyAdmin peut afficher des erreurs du type :
+
+```text
+Unexpected character (near "[" at position XXX)
+```
+
+C’est normal : il s’agit de l’analyse statique de phpMyAdmin qui n’aime pas certains champs
+(stockage de tags / JSON en texte), mais MySQL accepte parfaitement le script.
+
+✅ Pour éviter ces faux positifs, utilisez uniquement l’onglet Importer
+ou le bouton Exécuter sans passer par l’analyse statique.
+
+![Crée la base](img/create_base.png)
+
+![Importer la base](img/import.png)
+
+![Base crée](img/create.png)
+
+
+---
+
 ## ✨ Features principales
 
 - 🔹 **Framework : ESX Legacy** (avec toutes les dépendances de base)
