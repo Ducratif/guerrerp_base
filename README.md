@@ -213,6 +213,12 @@ set onesync on
 sets locale "fr-FR"
 ```
 
+Dans `ressources.cfg`
+
+### Si vous avez télécharger les packs de véhicule & mapping penser a retiré les `#` devant
+Dans: `# -----MAPPING-----` & `#------VOITURE------` & `#--------------Voiture concess------------`
+
+
 ---
 
 ## 🚀 Installation rapide
