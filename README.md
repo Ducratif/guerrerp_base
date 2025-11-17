@@ -1,7 +1,7 @@
 # GuerreRP – Base FiveM Publique (ESX Legacy)
 
 > **Auteur : _Ducratif_**  
-> **Documentation principale :** <https://github.com/Ducratif/guerrerp_base>  
+> **Documentation principale :** <https://guerrerp.ducratif.com>  
 > **Discord support & retours :** <https://discord.gg/kpD8pQBBWm>
 
 [![GitHub Release](https://img.shields.io/github/v/release/Ducratif/guerrerp_base)](https://github.com/Ducratif/guerrerp_base/releases)
